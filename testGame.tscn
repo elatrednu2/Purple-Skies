@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsiby2wgu1ced"]
+
+[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://platform.tscn" id="1_glyme"]
+[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Player.tscn" id="2_yimfw"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_left = -5.0
+offset_top = -2.0000038
+offset_right = 789.0
+offset_bottom = 343.0
+scale = Vector2(1.5076578, 1.9983081)
+color = Color(0.18818161, 0.49154615, 0.6220432, 1)
+
+[node name="Platform" parent="." instance=ExtResource("1_glyme")]
+position = Vector2(371, 328)
+scale = Vector2(2.0632253, 0.15986043)
+
+[node name="Platform2" parent="." instance=ExtResource("1_glyme")]
+position = Vector2(239.99997, 243)
+scale = Vector2(0.20801325, 0.17421642)
+
+[node name="Platform3" parent="." instance=ExtResource("1_glyme")]
+position = Vector2(565.1149, 178.1507)
+scale = Vector2(0.82176405, 0.31231675)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_yimfw")]
+position = Vector2(27.1945, 238.20149)
