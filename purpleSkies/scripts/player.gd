@@ -11,9 +11,9 @@ func _physics_process(delta):
 	update_movement(delta)
 
 func handle_input():
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_key_pressed(KEY_W) and is_on_floor():
 		velocity.y = jump_speed
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("KEY_A", "KEY_D")
 	velocity.x = speed * direction
 	
 func update_movement(delta: float) -> void:
