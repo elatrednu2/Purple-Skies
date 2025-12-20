@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcc1d4jdeotfg"]
+[gd_scene load_steps=3 format=3 uid="uid://bsiw1dgracmxu"]
 
-[ext_resource type="Script" uid="uid://27le36vi55y3" path="res://character_body_2d.gd" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://27le36vi55y3" path="res://purpleSkies/scripts/character_body_2d.gd" id="1_f50pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
 size = Vector2(76, 189)

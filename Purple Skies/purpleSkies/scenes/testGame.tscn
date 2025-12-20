@@ -12,16 +12,16 @@ scale = Vector2(1.5076578, 1.9983081)
 color = Color(0.18818161, 0.49154615, 0.6220432, 1)
 
 [node name="Platform" parent="." instance=ExtResource("1_glyme")]
-position = Vector2(371, 328)
+position = Vector2(-153.21777, 300.75443)
 scale = Vector2(2.0632253, 0.15986043)
 
 [node name="Platform2" parent="." instance=ExtResource("1_glyme")]
-position = Vector2(239.99997, 243)
+position = Vector2(210.25992, 209.67737)
 scale = Vector2(0.20801325, 0.17421642)
 
 [node name="Platform3" parent="." instance=ExtResource("1_glyme")]
-position = Vector2(565.1149, 178.1507)
+position = Vector2(371.4371, 95.580864)
 scale = Vector2(0.82176405, 0.31231675)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_yimfw")]
-position = Vector2(27.1945, 238.20149)
+position = Vector2(35.817146, 236.19981)

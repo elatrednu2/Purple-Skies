@@ -19,3 +19,4 @@ offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.69089365, 1.6162906)
 color = Color(0.39607844, 0.36862746, 0.0627451, 1)
+metadata/_edit_use_anchors_ = true
