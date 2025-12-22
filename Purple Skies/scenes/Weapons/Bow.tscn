@@ -13,6 +13,5 @@ texture = ExtResource("1_myqav")
 
 [node name="Arrow" type="Sprite2D" parent="Bow (rest)"]
 position = Vector2(17, 1)
-rotation = 1.5790237
-scale = Vector2(1, 0.609)
+rotation = 1.5707964
 texture = ExtResource("3_cvln2")
