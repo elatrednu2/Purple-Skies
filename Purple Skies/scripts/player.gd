@@ -14,7 +14,7 @@ var canJump = true
 #these methods/functions run once every frame so they fast
 func _physics_process(delta):
 	handleInput()
-	velocity.y += gravity * delta   
+	velocity.y += gravity *delta #delta is the time between frames
 	move_and_slide()
 	update_movement(delta)
 
@@ -46,3 +46,4 @@ func handleInput():
 
 func update_movement(delta: float) -> void: #this is just there idk why but it has sm to do with delta (which is the fps kinda) and the game gets mad if i remove it
 	pass
+
