@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Purple Skies/scripts/player.gd
 extends CharacterBody2D
 
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
@@ -45,9 +44,9 @@ func handleInput():
 	if not Input.is_action_pressed("jump"): #this is FUNDEMENTAL as if sets the canjump to true every frame the W key is not pressed. This makes it so thast you can keep jumping on the floor as long as you hold W, no matter if you double jumped or not
 		canJump = true
 
+	if Input.is_action_just_pressed("smash"):
+		velocity.y = -jump_speed * 2
+
 func update_movement(delta: float) -> void: #this is just there idk why but it has sm to do with delta (which is the fps kinda) and the game gets mad if i remove it
 	pass
 
-=======
-
->>>>>>> 81e5c50 (added camera movement, smash, camera shake, sword):Purple Skies/purpleSkies/scripts/player.gd
