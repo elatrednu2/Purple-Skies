@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var health_bar = $"../healthBar/CanvasLayer/ProgressBar" #adjust path for health bar
+@onready var health_bar = $"../CanvasLayer/TextureProgressBar" #adjust path for health bar
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
 @export var speed: float = 380
 @export var friction: float = 200
@@ -24,6 +24,7 @@ func take_damage(amount: int):
 
 	if health <= 0:
 		die()
+		health = 100
 
 func heal(amount: int):
 	health += amount
@@ -33,7 +34,8 @@ func heal(amount: int):
 func die():
 	position.x = 59.695
 	position.y = 261
-
+	
+	
 #these methods/functions run once every frame so they fast
 func _physics_process(delta):
 	var inputDir := 0 #imput direction
@@ -63,6 +65,8 @@ func _physics_process(delta):
 #everytjhinmg in here is about keyboard inputs and stuff
 func handleInput():
 	
+	if Input.is_key_pressed(KEY_F):
+		take_damage(1)
 	if is_on_floor(): #the function is_on_floor is a bool predefined in a godot class
 		jumps = 0 #your jumps are set to 0 every time you hit the floor (yes the game knows then you hit the floor using the gravity)
 		canJump = true #every time you hit the floor, you can jump again. we will use this boolean later 
