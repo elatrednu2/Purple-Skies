@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var gravity: float = 440
 @export var jump_speed: float = -400
 @export var max_health: int = 100
-var health: int = max_health
+var health: float = max_health
 #constant maxJumps and jumps are for double jumps, as jumps is the number of jumps you have AT ANY TIME but max is the maximum jumps you can reach
 const maxJumps = 2
 var jumps = 0
@@ -17,7 +17,7 @@ var canJump = true
 
 signal health_changed(current, max)
 
-func take_damage(amount: int):
+func take_damage(amount: float):
 	health -= amount
 	health = clamp(health, 0, max_health)
 	emit_signal("health_changed", health, max_health)
@@ -26,7 +26,7 @@ func take_damage(amount: int):
 		die()
 		health = 100
 
-func heal(amount: int):
+func heal(amount: float):
 	health += amount
 	health = clamp(health, 0, max_health)
 	emit_signal("health_changed", health, max_health)
@@ -41,6 +41,7 @@ func _physics_process(delta):
 	var inputDir := 0 #imput direction
 	handleInput()
 	velocity.y += gravity *delta #delta is the time between frames
+	heal(0.1)
 	move_and_slide()
 	update_movement(delta)
 	resetPos()
