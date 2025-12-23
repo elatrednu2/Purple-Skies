@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://68qflpo631xn"]
+
+[ext_resource type="Texture2D" uid="uid://d1xsbg6f02usm" path="res://Assets/small sword.webp" id="1_spn06"]
+[ext_resource type="Script" uid="uid://n7loyrk3uyey" path="res://Purple Skies/scripts/Health.gd" id="2_2ctul"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 139.0
+offset_top = -2.9999886
+offset_right = 642.0
+offset_bottom = 78.000015
+rotation = 1.5711573
+scale = Vector2(1.6547405, 1.6234264)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+fill_mode = 3
+texture_progress = ExtResource("1_spn06")
+script = ExtResource("2_2ctul")
