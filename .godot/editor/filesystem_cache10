@@ -1,41 +1,37 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766872945
-Sword.tscn::PackedScene::1684861271767640778::1766717726::0::1::::<><><>0<>0<><>::
-::res://Assets/::1766874066
-BaseArrow-1.png (1).png::CompressedTexture2D::385716588388235664::1766873815::1766873822::1::::<><><>0<>0<>636bcd93c7a7943cff944f8ee8696c18<>res://.godot/imported/BaseArrow-1.png (1).png-895cf072530c948432b8c69d4bb8794f.ctex::
-BaseArrow.png::CompressedTexture2D::7744467793082191836::1766873385::1766873391::1::::<><><>0<>0<>02d6b4b06cfeadd39da6ef8b1021c063<>res://.godot/imported/BaseArrow.png-69324c94825b4c1ba0ef14e03577bae3.ctex::
-BaseArrow_enhanced_crisp.png::CompressedTexture2D::2101743428716367850::1766874066::1766874092::1::::<><><>0<>0<>3df9dfb2ba604f3e04e16128b8fc182d<>res://.godot/imported/BaseArrow_enhanced_crisp.png-f76317a9ea3a5b0fda45c824f297ebe8.ctex::
-BowUnstrung.png::CompressedTexture2D::2745924653004578355::1766872159::1766872161::1::::<><><>0<>0<>a89a1ec78d8f1b92be078f75f8bc58f4<>res://.godot/imported/BowUnstrung.png-b3d9b7b7b8b4a1665c5335bb4c5d91d1.ctex::
-small sword.webp::CompressedTexture2D::9032747728965929480::1766722783::1766722787::1::::<><><>0<>0<>ba5ae5bd0f849df968c496665ae5df89<>res://.godot/imported/small sword.webp-1f386b9249d2c0307cd277b3d65c2564.ctex::
-sword-small.png::CompressedTexture2D::5992789447150583827::1766721439::1766721450::0::::<><><>0<>0<>dbfe8f984b9d153eb26e5bc3983e96bc<>::
-sword.png::CompressedTexture2D::632882416980877038::1766717995::1766720008::0::::<><><>0<>0<>4935d69ce54f1ce86101b721383a5326<>::
-swordwbg-1.png (1).png::CompressedTexture2D::5321230134740415387::1766872133::1766872135::1::::<><><>0<>0<>63437f973c7fff5867868a7f0c261bb5<>res://.godot/imported/swordwbg-1.png (1).png-0dd4ebb7b41b62d6feb22c9882b0f511.ctex::
-swordwbg-1.png_1-1.png_1.webp::CompressedTexture2D::6054662813229177801::1766723519::1766723520::1::::<><><>0<>0<>e8fea643c4b5c6bfeefac011610f9cbe<>res://.godot/imported/swordwbg-1.png_1-1.png_1.webp-34526c7dfbb13a2f1f2c7fbb18dbadd4.ctex::
-swordwbg-1.png_1.webp::CompressedTexture2D::458096405984973537::1766717978::1766720008::1::::<><><>0<>0<>4ff4ff79da6cfee9c2fa33b8d0140846<>res://.godot/imported/swordwbg-1.png_1.webp-0042a2aea763b34fec9f0d7218dce212.ctex::
-::res://Purple Skies/::1766357214
-::res://Purple Skies/purpleSkies/::1766357214
-::res://Purple Skies/purpleSkies/scenes/::1766873414
-platform.tscn::PackedScene::8576818004373281190::1766805894::0::1::::<><><>0<>0<><>::
-Player.tscn::PackedScene::7442214889316600955::1766873190::0::1::::<><><>0<>0<><>::uid://d3e8bsxh3tnbc::::res://Purple Skies/purpleSkies/scripts/player.gd<>uid://bv7a5aflpltu8::::res://Purple Skies/purpleSkies/scripts/camera_2d.gd<>uid://b3386g7dgj4vp::::res://Purple Skies/purpleSkies/scenes/Weapons/Bow.tscn<>uid://imrwhkps24kw::::res://Purple Skies/purpleSkies/scenes/Weapons/Sword.tscn
-testGame.tscn::PackedScene::3666439919673160803::1766873414::0::1::::<><><>0<>0<><>::uid://dugw66842yfb7::::res://Purple Skies/purpleSkies/scenes/platform.tscn<>uid://debcgr3wxjbd0::::res://Purple Skies/purpleSkies/scenes/Player.tscn
-::res://Purple Skies/purpleSkies/scenes/Weapons/::1766873992
-Bow.tscn::PackedScene::4411570267762581077::1766873992::0::1::::<><><>0<>0<><>::uid://bfee8inowkbwt::::res://Assets/BowUnstrung.png<>uid://cqjx5jbmpty2x::::res://Purple Skies/purpleSkies/scripts/bow.gd<>uid://fq3xwn7tjeyy::::res://Assets/BaseArrow-1.png (1).png
-Sword.tscn::PackedScene::587355142314089654::1766872266::0::1::::<><><>0<>0<><>::uid://ch2v5auvjwfix::::res://Assets/swordwbg-1.png (1).png
-::res://Purple Skies/purpleSkies/scripts/::1766872945
-bow.gd::GDScript::5915892804853035093::1766872942::0::1::::<>Node2D<><>0<>0<><>::
-camera_2d.gd::GDScript::3926500070283152637::1766871926::0::1::::<>Camera2D<><>0<>0<><>::
-collision_shape_2d.gd::GDScript::8705277672689200186::1766720411::0::1::::<>CollisionShape2D<><>0<>0<><>::
-player.gd::GDScript::9134813611822678608::1766726803::0::1::::<>CharacterBody2D<><>0<>0<><>::
-sprite_2d.gd::GDScript::6485211592356059209::1766726591::0::1::::equipItem<>Node2D<><>0<>0<><>::
-test_game.gd::GDScript::888087757460044839::1766720979::0::1::::<>ColorRect<><>0<>0<><>::
-::res://Purple Skies/scripts (unused)/::1766357312
-character_body_2d.gd::GDScript::1961835415961628052::1766357214::0::1::::<>CharacterBody2D<><>0<>0<><>::
-character_body_2d.gdc::GDScript::2011017590406144047::1766357214::0::1::::<>RefCounted<><>0<>0<><>::
-node_2d.gd::GDScript::5486184351101991952::1766357214::0::1::::<>Node2D<><>0<>0<><>::
-player.gdc::GDScript::6272450897806818848::1766357214::0::1::::<>RefCounted<><>0<>0<><>::
-sprite_2d.gd::GDScript::6485211592356059209::1766357214::0::1::::<>Sprite2D<><>0<>0<><>::
-sprite_2d.gdc::GDScript::6260654930565552327::1766357214::0::1::::<>RefCounted<><>0<>0<><>::
-::res://Purple Skies/Unused files/::1766357312
-global_script_class_cache.cfg::TextFile::-1::1766357214::0::1::::<><><>0<>0<><>::
-icon.svg::CompressedTexture2D::4581810031416679115::1766357214::1766357312::1::::<><><>0<>0<>e46315cb95ef3d5ac33bf839e3b0c830<>res://.godot/imported/icon.svg-913288ff25df63c6b596c20a4fa8a863.ctex::
-LICENSE.md::TextFile::-1::1766357214::0::1::::<><><>0<>0<><>::
+::res://::1766467140
+export_presets.cfg::TextFile::-1::1766467114::0::1::::<><><>0<>0<><>::
+LICENSE.md::TextFile::-1::1766467114::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1766467114::0::1::::<><><>0<>0<><>::
+::res://Assets/::1766467142
+BaseArrow-1.png (1).png::CompressedTexture2D::385716588388235664::1766467114::1766467142::1::::<><><>0<>0<>636bcd93c7a7943cff944f8ee8696c18<>res://.godot/imported/BaseArrow-1.png (1).png-895cf072530c948432b8c69d4bb8794f.ctex::
+BaseArrow.png::CompressedTexture2D::7744467793082191836::1766467114::1766467142::1::::<><><>0<>0<>02d6b4b06cfeadd39da6ef8b1021c063<>res://.godot/imported/BaseArrow.png-69324c94825b4c1ba0ef14e03577bae3.ctex::
+BaseArrow_enhanced_crisp.png::CompressedTexture2D::2101743428716367850::1766467114::1766467142::1::::<><><>0<>0<>3df9dfb2ba604f3e04e16128b8fc182d<>res://.godot/imported/BaseArrow_enhanced_crisp.png-f76317a9ea3a5b0fda45c824f297ebe8.ctex::
+BowUnstrung.png::CompressedTexture2D::2745924653004578355::1766467114::1766467142::1::::<><><>0<>0<>a89a1ec78d8f1b92be078f75f8bc58f4<>res://.godot/imported/BowUnstrung.png-b3d9b7b7b8b4a1665c5335bb4c5d91d1.ctex::
+small sword.webp::CompressedTexture2D::9032747728965929480::1766467114::1766467142::1::::<><><>0<>0<>ba5ae5bd0f849df968c496665ae5df89<>res://.godot/imported/small sword.webp-1f386b9249d2c0307cd277b3d65c2564.ctex::
+sword-small.png::CompressedTexture2D::5992789447150583827::1766467114::1766467142::0::::<><><>0<>0<>dbfe8f984b9d153eb26e5bc3983e96bc<>::
+sword.png::CompressedTexture2D::632882416980877038::1766467114::1766467142::0::::<><><>0<>0<>4935d69ce54f1ce86101b721383a5326<>::
+swordwbg-1.png (1).png::CompressedTexture2D::5321230134740415387::1766467114::1766467142::1::::<><><>0<>0<>63437f973c7fff5867868a7f0c261bb5<>res://.godot/imported/swordwbg-1.png (1).png-0dd4ebb7b41b62d6feb22c9882b0f511.ctex::
+swordwbg-1.png_1-1.png_1.webp::CompressedTexture2D::6054662813229177801::1766467114::1766467142::1::::<><><>0<>0<>e8fea643c4b5c6bfeefac011610f9cbe<>res://.godot/imported/swordwbg-1.png_1-1.png_1.webp-34526c7dfbb13a2f1f2c7fbb18dbadd4.ctex::
+swordwbg-1.png_1.webp::CompressedTexture2D::458096405984973537::1766467114::1766467142::1::::<><><>0<>0<>4ff4ff79da6cfee9c2fa33b8d0140846<>res://.godot/imported/swordwbg-1.png_1.webp-0042a2aea763b34fec9f0d7218dce212.ctex::
+::res://Purple Skies/::1766467114
+::res://Purple Skies/scenes/::1766467114
+EnemyBlock.tscn::PackedScene::7314835494110273738::1766467114::0::1::::<><><>0<>0<><>::uid://cnb05ps1wck6m::::res://Purple Skies/scripts/enemyBlockHitbox.gd
+healthBar.tscn::PackedScene::2244959621124335955::1766467114::0::1::::<><><>0<>0<><>::uid://d1xsbg6f02usm::::res://Assets/small sword.webp<>uid://n7loyrk3uyey::::res://Purple Skies/scripts/Health.gd
+platform.tscn::PackedScene::8576818004373281190::1766467114::0::1::::<><><>0<>0<><>::
+Player.tscn::PackedScene::7442214889316600955::1766467114::0::1::::<><><>0<>0<><>::uid://d3e8bsxh3tnbc::::res://Purple Skies/purpleSkies/scripts/player.gd<>uid://bv7a5aflpltu8::::res://Purple Skies/purpleSkies/scripts/camera_2d.gd<>uid://b3386g7dgj4vp::::res://Purple Skies/purpleSkies/scenes/Weapons/Bow.tscn<>uid://imrwhkps24kw::::res://Purple Skies/purpleSkies/scenes/Weapons/Sword.tscn
+testGame.tscn::PackedScene::3666439919673160803::1766467114::0::1::::<><><>0<>0<><>::uid://dugw66842yfb7::::res://Purple Skies/purpleSkies/scenes/platform.tscn<>uid://debcgr3wxjbd0::::res://Purple Skies/purpleSkies/scenes/Player.tscn
+::res://Purple Skies/scenes/Weapons/::1766467114
+Bow.tscn::PackedScene::4411570267762581077::1766467114::0::1::::<><><>0<>0<><>::uid://bfee8inowkbwt::::res://Assets/BowUnstrung.png<>uid://cqjx5jbmpty2x::::res://Purple Skies/purpleSkies/scripts/bow.gd<>uid://fq3xwn7tjeyy::::res://Assets/BaseArrow-1.png (1).png
+Sword.tscn::PackedScene::587355142314089654::1766467114::0::1::::<><><>0<>0<><>::uid://ch2v5auvjwfix::::res://Assets/swordwbg-1.png (1).png
+::res://Purple Skies/scripts/::1766467114
+bow.gd::GDScript::5915892804853035093::1766467114::0::1::::<>Node2D<><>0<>0<><>::
+camera_2d.gd::GDScript::3926500070283152637::1766467114::0::1::::<>Camera2D<><>0<>0<><>::
+collision_shape_2d.gd::GDScript::8705277672689200186::1766467114::0::1::::<>CollisionShape2D<><>0<>0<><>::
+player.gd::GDScript::9134813611822678608::1766467114::0::1::::<>CharacterBody2D<><>0<>0<><>::
+sprite_2d.gd::GDScript::6485211592356059209::1766467114::0::1::::equipItem<>Node2D<><>0<>0<><>::
+test_game.gd::GDScript::888087757460044839::1766467114::0::1::::<>ColorRect<><>0<>0<><>::
+::res://Purple Skies/scripts (unused)/::1766467114
+::res://Purple Skies/Unused files/::1766467114
+global_script_class_cache.cfg::TextFile::-1::1766467114::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::4581810031416679115::1766467114::1766467114::1::::<><><>0<>0<>e46315cb95ef3d5ac33bf839e3b0c830<>res://.godot/imported/icon.svg-913288ff25df63c6b596c20a4fa8a863.ctex::

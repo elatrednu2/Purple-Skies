@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://debcgr3wxjbd0"]
 
-[ext_resource type="Script" uid="uid://d3e8bsxh3tnbc" path="res://Purple Skies/purpleSkies/scripts/player.gd" id="1_xhfnw"]
-[ext_resource type="Script" uid="uid://bv7a5aflpltu8" path="res://Purple Skies/purpleSkies/scripts/camera_2d.gd" id="2_povuy"]
-[ext_resource type="PackedScene" uid="uid://b3386g7dgj4vp" path="res://Purple Skies/purpleSkies/scenes/Weapons/Bow.tscn" id="3_3560o"]
-[ext_resource type="PackedScene" uid="uid://imrwhkps24kw" path="res://Purple Skies/purpleSkies/scenes/Weapons/Sword.tscn" id="4_q6q1m"]
+[ext_resource type="Script" uid="uid://d3e8bsxh3tnbc" path="res://Purple Skies/scripts/player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://bv7a5aflpltu8" path="res://Purple Skies/scripts/camera_2d.gd" id="2_povuy"]
+[ext_resource type="PackedScene" uid="uid://b3386g7dgj4vp" path="res://Purple Skies/scripts/scenes/Weapons/Bow.tscn" id="3_3560o"]
+[ext_resource type="PackedScene" uid="uid://imrwhkps24kw" path="res://Purple Skies/scripts/scenes/Weapons/Sword.tscn" id="4_q6q1m"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(28, 65)

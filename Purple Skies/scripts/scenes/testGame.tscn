@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsiby2wgu1ced"]
 
-[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://Purple Skies/purpleSkies/scenes/platform.tscn" id="1_glyme"]
-[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Purple Skies/purpleSkies/scenes/Player.tscn" id="2_yimfw"]
+[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://Purple Skies/scripts/scenes/platform.tscn" id="1_glyme"]
+[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Purple Skies/scripts/scenes/Player.tscn" id="2_yimfw"]
+
 
 [node name="ColorRect" type="ColorRect"]
 offset_left = -7.0
