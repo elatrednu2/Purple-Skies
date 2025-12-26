@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://68qflpo631xn"]
+
+[ext_resource type="Script" uid="uid://n7loyrk3uyey" path="res://Purple Skies/scripts/Health.gd" id="2_2ctul"]
+[ext_resource type="Texture2D" uid="uid://bxfbqb3gpirht" path="res://Assets/HealthBarUnder3x.png" id="2_e1fvj"]
+[ext_resource type="Texture2D" uid="uid://cfbkfr2nu47y7" path="res://Assets/HealthBarOver3x.png" id="3_l73ut"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Health Bar" type="TextureProgressBar" parent="."]
+offset_right = 460.0
+offset_bottom = 112.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_under = ExtResource("2_e1fvj")
+texture_progress = ExtResource("3_l73ut")
+texture_progress_offset = Vector2(129, 0)
+script = ExtResource("2_2ctul")

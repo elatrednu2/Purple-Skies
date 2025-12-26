@@ -1,0 +1,9 @@
+res://Purple Skies/scenes/Weapons/crosshair.tscn
+res://Purple Skies/scenes/Weapons/Bow.tscn
+res://Purple Skies/scenes/Weapons/Arrow.tscn
+res://Purple Skies/scenes/EnemyBlock.tscn
+res://Purple Skies/scripts/player.gd
+res://Purple Skies/scripts/bow.gd
+res://Purple Skies/scripts/camera_2d.gd
+res://Purple Skies/scripts/arrow.gd
+res://Purple Skies/scenes/testGame.tscn

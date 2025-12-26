@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsiby2wgu1ced"]
+
+[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://Purple Skies/scenes/platform.tscn" id="1_glyme"]
+[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Purple Skies/scenes/Player.tscn" id="2_yimfw"]
+[ext_resource type="PackedScene" uid="uid://dchmjij4h3tve" path="res://Purple Skies/scenes/EnemyBlock.tscn" id="3_abpbn"]
+[ext_resource type="PackedScene" uid="uid://68qflpo631xn" path="res://Purple Skies/scenes/healthBar.tscn" id="4_is30e"]
+[ext_resource type="PackedScene" uid="uid://bcgo21iicfsh1" path="res://Purple Skies/scenes/Weapons/crosshair.tscn" id="5_bm2t6"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_left = -7.0
+offset_top = 20.999998
+offset_right = 787.0
+offset_bottom = 366.0
+scale = Vector2(1.5076578, 1.9983081)
+color = Color(0.18818161, 0.49154615, 0.6220432, 1)
+
+[node name="Platform" parent="." groups=["floor"] instance=ExtResource("1_glyme")]
+position = Vector2(-126.0233, 290.74597)
+scale = Vector2(2.0632253, 0.3600298)
+
+[node name="Platform2" parent="." groups=["floor"] instance=ExtResource("1_glyme")]
+position = Vector2(210.25992, 209.67737)
+scale = Vector2(0.20801325, 0.17421642)
+
+[node name="Platform3" parent="." groups=["floor"] instance=ExtResource("1_glyme")]
+position = Vector2(364.141, 129.60965)
+scale = Vector2(0.82176405, 0.31231675)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_yimfw")]
+position = Vector2(61.021805, 253.71461)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_abpbn")]
+position = Vector2(215.56616, 109.092285)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_is30e")]
+
+[node name="Sprite2D" parent="." instance=ExtResource("5_bm2t6")]

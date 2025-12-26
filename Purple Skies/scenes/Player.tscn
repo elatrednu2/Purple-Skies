@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://debcgr3wxjbd0"]
+
+[ext_resource type="Script" uid="uid://d3e8bsxh3tnbc" path="res://Purple Skies/scripts/player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://bv7a5aflpltu8" path="res://Purple Skies/scripts/camera_2d.gd" id="2_povuy"]
+[ext_resource type="PackedScene" uid="uid://b3386g7dgj4vp" path="res://Purple Skies/scenes/Weapons/Bow.tscn" id="3_3560o"]
+[ext_resource type="PackedScene" uid="uid://imrwhkps24kw" path="res://Purple Skies/scenes/Weapons/Sword.tscn" id="4_q6q1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
+size = Vector2(24, 62)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0rwas")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -14.0
+offset_top = -32.0
+offset_right = 26.0
+offset_bottom = 8.0
+scale = Vector2(0.69089365, 1.6162906)
+color = Color(0.39607844, 0.36862746, 0.0627451, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_povuy")
+
+[node name="Bow" parent="." instance=ExtResource("3_3560o")]
+position = Vector2(25, -19)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sword" parent="." instance=ExtResource("4_q6q1m")]
+visible = false
+position = Vector2(14, 3)
+rotation = 0.33116993
+scale = Vector2(0.5, 0.5)

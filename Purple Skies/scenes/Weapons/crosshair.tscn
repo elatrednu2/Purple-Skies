@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcgo21iicfsh1"]
+
+[ext_resource type="Texture2D" uid="uid://deyfcls08sa5u" path="res://Assets/Crosshair.png" id="1_5s2b7"]
+[ext_resource type="Script" uid="uid://cfgwagjuywjru" path="res://Purple Skies/scripts/Crosshair.gd" id="1_wlqgx"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_5s2b7")
+script = ExtResource("1_wlqgx")
