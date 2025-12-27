@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var maxPull := 300
+@export var maxPull := 200
 @export var maxForce := 1200
 const kMinAngle := -80
 const kMaxAngle := 80
