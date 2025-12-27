@@ -6,8 +6,13 @@ extends RigidBody2D #this node attached to a rigid body (credits to zilin bc i w
 var stuck: bool = false #this was made from me lwk not knowing how to make the arrow stop spinning on contact with the ground
 @export var hitboxDelay := 0.1
 @export var despawnTime = 3
+@export var arrowDamage := 10
+var power:float = 0
+var hasHit = false
 
 func _ready(): #things in _ready() run once in the beginnning
+	var arrowHitbox: Area2D = $Area2D
+	arrowHitbox.damage = getDamage()
 	angular_damp = 10 #angular damp is the decceleration of the arrow thru the air so it doesnt travel forever. 
 	hitbox.disabled = true #sets hitbox as disabled when starting to prevent hitbox collision with player
 	
@@ -19,20 +24,20 @@ func _ready(): #things in _ready() run once in the beginnning
 	)
 	add_child(timer)
 	timer.start()
-	
-
 
 func _on_area_2d_body_entered(body):
 	if stuck:
 		return
-	if body.is_in_group("floor"):
-		stickDespawn()
 		
-func _on_body_entered(body):
-	if stuck:
-		return
-	if body.is_in_group("floor"):
+	if body.has_method("stopSpin"):
 		stickDespawn()
+
+	if body.has_method("takeDamage"):
+		var dmg = getDamage()  # <-- call arrow's own getDamage()
+		body.takeDamage(dmg)
+		hasHit = true
+
+		
 		
 func stickDespawn():
 	stuck = true
@@ -58,7 +63,13 @@ func _physics_process(delta): #again, delta means it runs once every frame and _
 		return
 	if linear_velocity.length() > 1:
 		rotation = linear_velocity.angle()
-
+	
+func getDamage() -> float:
+	var t:float = clamp(power, 0.0, 1.0)
+	var curved:float = t * t + 0.2 * t
+	return arrowDamage * curved
+	
+	
 		
 
 	

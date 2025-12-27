@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsiby2wgu1ced"]
+[gd_scene load_steps=7 format=3 uid="uid://bsiby2wgu1ced"]
 
 [ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://Purple Skies/scenes/platform.tscn" id="1_glyme"]
 [ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Purple Skies/scenes/Player.tscn" id="2_yimfw"]
 [ext_resource type="PackedScene" uid="uid://dchmjij4h3tve" path="res://Purple Skies/scenes/EnemyBlock.tscn" id="3_abpbn"]
 [ext_resource type="PackedScene" uid="uid://68qflpo631xn" path="res://Purple Skies/scenes/healthBar.tscn" id="4_is30e"]
 [ext_resource type="PackedScene" uid="uid://bcgo21iicfsh1" path="res://Purple Skies/scenes/Weapons/crosshair.tscn" id="5_bm2t6"]
+[ext_resource type="PackedScene" uid="uid://u1ysp8216b0c" path="res://Purple Skies/scenes/enemy.tscn" id="6_ko481"]
 
 [node name="ColorRect" type="ColorRect"]
 offset_left = -7.0
@@ -35,3 +36,6 @@ position = Vector2(215.56616, 109.092285)
 [node name="CanvasLayer" parent="." instance=ExtResource("4_is30e")]
 
 [node name="Sprite2D" parent="." instance=ExtResource("5_bm2t6")]
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("6_ko481")]
+position = Vector2(894.1021, 149.12616)

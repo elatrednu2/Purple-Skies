@@ -1,10 +1,10 @@
 extends Node2D
 
-@export var maxPull := 200
+@export var maxPull := 300
 @export var maxForce := 1200
 const kMinAngle := -80
 const kMaxAngle := 80
-
+var currentForce = 0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D #sprite is animated bc we have separate anymation frames for the amount you pull back
 @onready var arrowSpawn: Marker2D = $Marker2D #marker2d is where the arrow will spawn from the bow 
 
@@ -57,21 +57,21 @@ func release(): #ends pulling
 	pullAmount = 0 #sets pullAmount to 0
 	
 func fireArrow(): 
-	var arrow_scene = preload("res://Purple Skies/scenes/Weapons/Arrow.tscn") #loads the arrow scene once at the beginnng for efficiency and reducing lag
-	var arrow = arrow_scene.instantiate() #instantiate means you create a new arrow. every time you pull, a new arrow is "instantiated" or created. Preload works well with this as the arrow scene declared at the begginging, meaning it can be called upon many times wihtout lag
-	get_tree().current_scene.add_child(arrow) #adds arrow to the current scene so it exists in the world. Without this, the arrow would not physically be there. what its sayiung is "get the current scene you are in of the scene tree and add the child called "arrow" (arrow is defined to be a preloaded var) 
-	arrow.add_to_group("arrows")
-	arrow.global_position = arrowSpawn.global_position #initially makes the arrow and the arrowspawn have the same position
+	var arrowScene = preload("res://Purple Skies/scenes/Weapons/Arrow.tscn")
+	var arrow = arrowScene.instantiate()
+	get_tree().current_scene.add_child(arrow)
 
-	var dir = -(Vector2.RIGHT.rotated(rotation)) #get_global_mopusepos() is a vector with the mouse position relative to the world. subtracts source from target. vector2 has 2 properties: length(magnitude) and direction and length has 3 values. Normalized makes them all into 1, making it so that you dontrol arrow speed using force, not distance from bow. 
+	arrow.power = pullAmount
+	arrow.global_position = arrowSpawn.global_position
 
-	var force = -(pullAmount * maxForce) #gets the negative force and its negative so that the arrow flies away from the player
-	
-	arrow.linear_velocity = (dir * force) #dir is two values between 1 and 0 right on the vector grid representing the direction of the arrow right? so youre doing both the values times force, which is the magnitude from your bow pull. so force = 200 means your arrow moves 200 pixels per second.
+	var dir = Vector2.RIGHT.rotated(rotation)
+	var force = pullAmount * maxForce
+
+	arrow.linear_velocity = dir * force
 	arrow.rotation = rotation
 	arrow.angular_velocity = 0
 	arrow.gravity_scale = 1
-	arrow.angular_damp = 10 #damp is like air frictoin, IM BASICALLT TRYING TO STOP IT FROM SPINNING OK
+	arrow.angular_damp = 10
 
 func softClamp(angle, minAngle, maxAngle, softness := 0.6):
 	if angle < minAngle:
