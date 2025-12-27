@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsiby2wgu1ced"]
 
-[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://purpleSkies/scenes/platform.tscn" id="1_glyme"]
-[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://purpleSkies/scenes/Player.tscn" id="2_yimfw"]
+[ext_resource type="PackedScene" uid="uid://dugw66842yfb7" path="res://Purple Skies/purpleSkies/scenes/platform.tscn" id="1_glyme"]
+[ext_resource type="PackedScene" uid="uid://debcgr3wxjbd0" path="res://Purple Skies/purpleSkies/scenes/Player.tscn" id="2_yimfw"]
 
 [node name="ColorRect" type="ColorRect"]
-offset_left = -5.0
-offset_top = -2.0000038
-offset_right = 789.0
-offset_bottom = 343.0
+offset_left = -7.0
+offset_top = 20.999998
+offset_right = 787.0
+offset_bottom = 366.0
 scale = Vector2(1.5076578, 1.9983081)
 color = Color(0.18818161, 0.49154615, 0.6220432, 1)
 
@@ -20,8 +20,8 @@ position = Vector2(210.25992, 209.67737)
 scale = Vector2(0.20801325, 0.17421642)
 
 [node name="Platform3" parent="." instance=ExtResource("1_glyme")]
-position = Vector2(371.4371, 95.580864)
+position = Vector2(364.141, 129.60965)
 scale = Vector2(0.82176405, 0.31231675)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_yimfw")]
-position = Vector2(35.817146, 236.19981)
+position = Vector2(58.368683, 264.2235)

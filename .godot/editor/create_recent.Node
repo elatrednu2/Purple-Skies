@@ -1,0 +1,9 @@
+Sprite2D
+Timer
+CollisionShape2D
+Area2D
+Node2D
+ColorRect
+ShapeCast2D
+StaticBody2D
+Camera2D

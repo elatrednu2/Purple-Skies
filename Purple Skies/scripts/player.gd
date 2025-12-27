@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Purple Skies/scripts/player.gd
 extends CharacterBody2D
 
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
@@ -47,3 +48,6 @@ func handleInput():
 func update_movement(delta: float) -> void: #this is just there idk why but it has sm to do with delta (which is the fps kinda) and the game gets mad if i remove it
 	pass
 
+=======
+
+>>>>>>> 81e5c50 (added camera movement, smash, camera shake, sword):Purple Skies/purpleSkies/scripts/player.gd
