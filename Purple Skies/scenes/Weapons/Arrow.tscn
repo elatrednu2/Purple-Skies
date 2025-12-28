@@ -1,17 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b30jm21tfopjc"]
+[gd_scene load_steps=8 format=3 uid="uid://b30jm21tfopjc"]
 
 [ext_resource type="Script" uid="uid://d3j2kqyjupa45" path="res://Purple Skies/scripts/arrow.gd" id="1_57odp"]
 [ext_resource type="Texture2D" uid="uid://dilqiusydnow7" path="res://Assets/BaseArrow.png" id="2_cv7hy"]
 [ext_resource type="Script" uid="uid://b4dvttwu8grni" path="res://Purple Skies/scripts/ArrowHitbox.gd" id="3_11ffd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ffd"]
-size = Vector2(35.184338, 2.6849728)
+size = Vector2(33.842384, 1.3024362)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cv7hy"]
-radius = 2.3165288
-height = 4.6330576
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_japuj"]
+size = Vector2(4.4665084, 5.2151365)
 
-[node name="Node2D" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny4a5"]
+size = Vector2(2.3129961, 2.9370444)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpycq"]
+size = Vector2(2.0052094, 2.0052085)
+
+[node name="Node2D" type="RigidBody2D" groups=["arrows"]]
 script = ExtResource("1_57odp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,9 +27,13 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_cv7hy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.130126, -0.115802765)
+position = Vector2(0.97977257, 0.085363805)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_11ffd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-26.357546, 0.020321846)
+shape = SubResource("RectangleShape2D_japuj")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-0.2517166, 0.08390522)
@@ -32,9 +41,13 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("3_11ffd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16.361553, -0.1957798)
+position = Vector2(15.798678, 0.2193804)
 scale = Vector2(1.5, 1.5)
-shape = SubResource("CapsuleShape2D_cv7hy")
+shape = SubResource("RectangleShape2D_ny4a5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17.965054, 0.051047027)
+shape = SubResource("RectangleShape2D_bpycq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

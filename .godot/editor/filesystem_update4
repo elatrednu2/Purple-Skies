@@ -1,9 +1,7 @@
-res://Purple Skies/scripts/arrow.gd
-res://Purple Skies/scenes/Weapons/Bow.tscn
-res://Purple Skies/scripts/bow.gd
-res://Purple Skies/scenes/platform.tscn
-res://Purple Skies/scripts/stopSpin/platform.gd
-res://enemy.tscn
-res://Purple Skies/scenes/testGame.tscn
-res://Purple Skies/scenes/enemy.tscn
 res://Purple Skies/scenes/enemy.gd
+res://Purple Skies/scenes/Weapons/Arrow.tscn
+res://Purple Skies/scripts/arrow.gd
+res://Purple Skies/scenes/enemy.tscn
+res://Purple Skies/scripts/bow.gd
+res://Purple Skies/scenes/area_2d.gd
+res://Purple Skies/scenes/EnemyBlock.tscn

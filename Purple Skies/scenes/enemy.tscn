@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://u1ysp8216b0c"]
+[gd_scene load_steps=6 format=3 uid="uid://u1ysp8216b0c"]
 
-[ext_resource type="Script" uid="uid://dkmonw1cd3g2a" path="res://Purple Skies/scenes/enemy.gd" id="1_j1v3f"]
-[ext_resource type="Script" uid="uid://s2lhhnwsew8h" path="res://Purple Skies/scenes/enemycollision.gd" id="2_e1krj"]
+[ext_resource type="Script" uid="uid://dkmonw1cd3g2a" path="res://Purple Skies/scripts/enemy.gd" id="1_j1v3f"]
+[ext_resource type="Script" uid="uid://s2lhhnwsew8h" path="res://Purple Skies/scripts/enemycollision.gd" id="2_e1krj"]
+[ext_resource type="Script" uid="uid://u6nf3ekw068c" path="res://Purple Skies/scripts/area_2d.gd" id="2_qms0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(42, 121)
@@ -17,6 +18,7 @@ position = Vector2(22, 62.5)
 shape = SubResource("RectangleShape2D_7xaro")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_qms0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(23.5, 63)

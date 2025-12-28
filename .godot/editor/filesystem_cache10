@@ -1,6 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766803061
-enemy.tscn::PackedScene::1458940886574404624::1766803068::0::1::::<><><>0<>0<><>::
+::res://::1766876810
 export_presets.cfg::TextFile::-1::1766792148::0::1::::<><><>0<>0<><>::
 LICENSE.md::TextFile::-1::1766792148::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1766792148::0::1::::<><><>0<>0<><>::
@@ -11,7 +10,7 @@ plugin.cfg::TextFile::-1::1766792148::0::1::::<><><>0<>0<><>::
 THIRDPARTY.md::TextFile::-1::1766792148::0::1::::<><><>0<>0<><>::
 ::res://addons/godot-git-plugin/linux/::1766792148
 ::res://addons/godot-git-plugin/macos/::1766792148
-::res://addons/godot-git-plugin/win64/::1766800212
+::res://addons/godot-git-plugin/win64/::1766870071
 ::res://Assets/::1766792148
 BaseArrow-1.png (1).png::CompressedTexture2D::385716588388235664::1766792148::1766792148::1::::<><><>0<>0<>636bcd93c7a7943cff944f8ee8696c18<>res://.godot/imported/BaseArrow-1.png (1).png-895cf072530c948432b8c69d4bb8794f.ctex::
 BaseArrow.png::CompressedTexture2D::7744467793082191836::1766792148::1766792148::1::::<><><>0<>0<>02d6b4b06cfeadd39da6ef8b1021c063<>res://.godot/imported/BaseArrow.png-69324c94825b4c1ba0ef14e03577bae3.ctex::
@@ -33,28 +32,32 @@ swordwbg-1.png (1).png::CompressedTexture2D::5321230134740415387::1766792148::17
 swordwbg-1.png_1-1.png_1.webp::CompressedTexture2D::6054662813229177801::1766792148::1766792148::1::::<><><>0<>0<>e8fea643c4b5c6bfeefac011610f9cbe<>res://.godot/imported/swordwbg-1.png_1-1.png_1.webp-34526c7dfbb13a2f1f2c7fbb18dbadd4.ctex::
 swordwbg-1.png_1.webp::CompressedTexture2D::458096405984973537::1766792148::1766792148::1::::<><><>0<>0<>4ff4ff79da6cfee9c2fa33b8d0140846<>res://.godot/imported/swordwbg-1.png_1.webp-0042a2aea763b34fec9f0d7218dce212.ctex::
 ::res://Purple Skies/::1766799201
-::res://Purple Skies/scenes/::1766802804
-EnemyBlock.tscn::PackedScene::7314835494110273738::1766799757::0::1::::<><><>0<>0<><>::uid://cnb05ps1wck6m::::res://Purple Skies/scripts/enemyBlockHitbox.gd
+::res://Purple Skies/scenes/::1766876810
+area_2d.gd::GDScript::1468572310329784136::1766876783::0::1::::<>Area2D<><>0<>0<><>::
+enemy.tscn::PackedScene::1458940886574404624::1766876811::0::1::::<><><>0<>0<><>::uid://dkmonw1cd3g2a::::res://Purple Skies/scripts/enemy.gd<>uid://s2lhhnwsew8h::::res://Purple Skies/scripts/enemycollision.gd<>uid://u6nf3ekw068c::::res://Purple Skies/scenes/area_2d.gd
+EnemyBlock.tscn::PackedScene::7314835494110273738::1766876806::0::1::::<><><>0<>0<><>::uid://cnb05ps1wck6m::::res://Purple Skies/scripts/enemyBlockHitbox.gd<>uid://l5v2rsvlunca::::res://Purple Skies/scripts/enemy_blockSS.gd
 healthBar.tscn::PackedScene::2244959621124335955::1766792148::0::1::::<><><>0<>0<><>::uid://n7loyrk3uyey::::res://Purple Skies/scripts/Health.gd<>uid://bxfbqb3gpirht::::res://Assets/HealthBarUnder3x.png<>uid://cfbkfr2nu47y7::::res://Assets/HealthBarOver3x.png
 platform.tscn::PackedScene::8576818004373281190::1766802804::0::1::::<><><>0<>0<><>::uid://bcmg83mx2u8yo::::res://Purple Skies/scripts/stopSpin/platform.gd
 Player.tscn::PackedScene::7442214889316600955::1766792148::0::1::::<><><>0<>0<><>::uid://d3e8bsxh3tnbc::::res://Purple Skies/scripts/player.gd<>uid://bv7a5aflpltu8::::res://Purple Skies/scripts/camera_2d.gd<>uid://b3386g7dgj4vp::::res://Purple Skies/scenes/Weapons/Bow.tscn<>uid://imrwhkps24kw::::res://Purple Skies/scenes/Weapons/Sword.tscn
-testGame.tscn::PackedScene::3666439919673160803::1766799308::0::1::::<><><>0<>0<><>::uid://dugw66842yfb7::::res://Purple Skies/scenes/platform.tscn<>uid://debcgr3wxjbd0::::res://Purple Skies/scenes/Player.tscn<>uid://dchmjij4h3tve::::res://Purple Skies/scenes/EnemyBlock.tscn<>uid://68qflpo631xn::::res://Purple Skies/scenes/healthBar.tscn<>uid://bcgo21iicfsh1::::res://Purple Skies/scenes/Weapons/crosshair.tscn
-::res://Purple Skies/scenes/Weapons/::1766802711
-Arrow.tscn::PackedScene::4403887091037150480::1766799308::0::1::::<><><>0<>0<><>::uid://d3j2kqyjupa45::::res://Purple Skies/scripts/arrow.gd<>uid://dilqiusydnow7::::res://Assets/BaseArrow.png<>uid://b4dvttwu8grni::::res://Purple Skies/scripts/ArrowHitbox.gd
-Bow.tscn::PackedScene::4411570267762581077::1766802711::0::1::::<><><>0<>0<><>::uid://cqjx5jbmpty2x::::res://Purple Skies/scripts/bow.gd<>uid://datlkdj1tmit7::::res://Assets/BowPulled0.png<>uid://bxexbp1oikvlt::::res://Assets/BowPulled1.png<>uid://bq4pw241ycieu::::res://Assets/BowPulled2.png<>uid://c6syh5g8oi4c7::::res://Assets/BowPulled3.png<>uid://c2kjawsyq2cm::::res://Assets/BowPulled4.png<>uid://uo8vfn7gikaj::::res://Assets/BowPulled5.png
+testGame.tscn::PackedScene::3666439919673160803::1766807579::0::1::::<><><>0<>0<><>::uid://dugw66842yfb7::::res://Purple Skies/scenes/platform.tscn<>uid://debcgr3wxjbd0::::res://Purple Skies/scenes/Player.tscn<>uid://dchmjij4h3tve::::res://Purple Skies/scenes/EnemyBlock.tscn<>uid://68qflpo631xn::::res://Purple Skies/scenes/healthBar.tscn<>uid://bcgo21iicfsh1::::res://Purple Skies/scenes/Weapons/crosshair.tscn<>uid://u1ysp8216b0c::::res://Purple Skies/scenes/enemy.tscn
+::res://Purple Skies/scenes/Weapons/::1766870960
+Arrow.tscn::PackedScene::4403887091037150480::1766870960::0::1::::<><><>0<>0<><>::uid://d3j2kqyjupa45::::res://Purple Skies/scripts/arrow.gd<>uid://dilqiusydnow7::::res://Assets/BaseArrow.png<>uid://b4dvttwu8grni::::res://Purple Skies/scripts/ArrowHitbox.gd
+Bow.tscn::PackedScene::4411570267762581077::1766808982::0::1::::<><><>0<>0<><>::uid://cqjx5jbmpty2x::::res://Purple Skies/scripts/bow.gd<>uid://bfee8inowkbwt::::res://Assets/BowUnstrung.png<>uid://bxexbp1oikvlt::::res://Assets/BowPulled1.png<>uid://bq4pw241ycieu::::res://Assets/BowPulled2.png<>uid://c6syh5g8oi4c7::::res://Assets/BowPulled3.png<>uid://c2kjawsyq2cm::::res://Assets/BowPulled4.png<>uid://uo8vfn7gikaj::::res://Assets/BowPulled5.png
 crosshair.tscn::PackedScene::2540084270159599896::1766792148::0::1::::<><><>0<>0<><>::uid://deyfcls08sa5u::::res://Assets/Crosshair.png<>uid://cfgwagjuywjru::::res://Purple Skies/scripts/Crosshair.gd
 Sword.tscn::PackedScene::587355142314089654::1766792148::0::1::::<><><>0<>0<><>::uid://ch2v5auvjwfix::::res://Assets/swordwbg-1.png (1).png
-::res://Purple Skies/scripts/::1766802753
-arrow.gd::GDScript::9144787167359635792::1766802539::0::1::::<>RigidBody2D<><>0<>0<><>::
+::res://Purple Skies/scripts/::1766876810
+arrow.gd::GDScript::9144787167359635792::1766876686::0::1::::<>RigidBody2D<><>0<>0<><>::
 ArrowHitbox.gd::GDScript::4429400302272921670::1766799308::0::1::::<>Area2D<><>0<>0<><>::
-bow.gd::GDScript::5915892804853035093::1766802711::0::1::::<>Node2D<><>0<>0<><>::
+bow.gd::GDScript::5915892804853035093::1766876238::0::1::::<>Node2D<><>0<>0<><>::
 camera_2d.gd::GDScript::3926500070283152637::1766792148::0::1::::<>Camera2D<><>0<>0<><>::
 collision_shape_2d.gd::GDScript::8705277672689200186::1766792148::0::1::::<>CollisionShape2D<><>0<>0<><>::
 Crosshair.gd::GDScript::5137507955926581738::1766792148::0::1::::<>Sprite2D<><>0<>0<><>::
+enemy.gd::GDScript::7886797469502444670::1766876783::0::1::::<>StaticBody2D<><>0<>0<><>::
 enemyBlockHitbox.gd::GDScript::5688933027938534658::1766799309::0::1::::<>Area2D<><>0<>0<><>::
+enemycollision.gd::GDScript::1319818161091687809::1766803624::0::1::::<>CollisionShape2D<><>0<>0<><>::
+enemy_blockSS.gd::GDScript::835332807596754152::1766808440::0::1::::<>StaticBody2D<><>0<>0<><>::
 Health.gd::GDScript::979209230774097632::1766792148::0::1::::<>TextureProgressBar<><>0<>0<><>::
-player.gd::GDScript::9134813611822678608::1766792148::0::1::::<>CharacterBody2D<><>0<>0<><>::
-sprite_2d.gd::GDScript::6485211592356059209::1766792148::0::1::::equipItem<>Node2D<><>0<>0<><>::
+player.gd::GDScript::9134813611822678608::1766808746::0::1::::<>CharacterBody2D<><>0<>0<><>::
 test_game.gd::GDScript::888087757460044839::1766792148::0::1::::<>ColorRect<><>0<>0<><>::
 ::res://Purple Skies/scripts/stopSpin/::1766802804
 platform.gd::GDScript::2551995627446721394::1766802804::0::1::::<>StaticBody2D<><>0<>0<><>::

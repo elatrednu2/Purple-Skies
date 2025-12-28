@@ -1,10 +1,10 @@
 extends CharacterBody2D
 @onready var health_bar = $"Health Bar" #adjust path for health bar
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
-@export var speed: float = 380
-@export var friction: float = 300
+@export var speed: float = 200
+@export var friction: float = 3
 @export var accel: float = 500
-@export var gravity: float = 440
+@export var gravity: float = 380
 @export var jump_speed: float = -400
 @export var max_health: int = 100
 var health: float = max_health
@@ -56,7 +56,7 @@ func _physics_process(delta):
 	if targetSpeed != 0:
 		velocity.x = move_toward(velocity.x, targetSpeed, accel * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, friction * delta)
+		velocity.x = move_toward(velocity.x, 0, friction * delta*100)
 	velocity.x = move_toward(velocity.x, targetSpeed, accel * delta)
 	velocity.y += gravity * delta	
 	
@@ -68,6 +68,7 @@ func handleInput():
 	
 	if Input.is_key_pressed(KEY_F):
 		take_damage(1)
+		
 	if is_on_floor(): #the function is_on_floor is a bool predefined in a godot class
 		jumps = 0 #your jumps are set to 0 every time you hit the floor (yes the game knows then you hit the floor using the gravity)
 		canJump = true #every time you hit the floor, you can jump again. we will use this boolean later 
@@ -93,7 +94,8 @@ func resetPos(): #resets pos to 0,0 whenever r is pressed for debugging purposes
 		position.y = 261
 		get_tree().call_group("arrows", "queue_free")
 
-		
+func stopSpin():
+	pass
 
 func kill():
 	if Input.is_key_pressed(KEY_K):
