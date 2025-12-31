@@ -2,11 +2,12 @@ extends CharacterBody2D
 @onready var health_bar = $"Health Bar" #adjust path for health bar
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
 @export var speed: float = 200
-@export var friction: float = 3
-@export var accel: float = 500
+@export var friction: float = 900
+@export var accel: float = 400
 @export var gravity: float = 380
 @export var jump_speed: float = -400
 @export var max_health: int = 100
+@export var swap_to_bow: bool = true
 var health: float = max_health
 #constant maxJumps and jumps are for double jumps, as jumps is the number of jumps you have AT ANY TIME but max is the maximum jumps you can reach
 const maxJumps = 2
@@ -62,7 +63,11 @@ func _physics_process(delta):
 	
 	if health_bar:
 		health_bar.value = health
-
+		
+	if Input.is_action_pressed("sprint") && Input.is_key_pressed(KEY_D) || Input.is_action_pressed("sprint") && Input.is_key_pressed(KEY_A):
+		speed = 600
+	else:
+		speed = 200
 #everytjhinmg in here is about keyboard inputs and stuff
 func handleInput():
 	
@@ -73,20 +78,24 @@ func handleInput():
 		jumps = 0 #your jumps are set to 0 every time you hit the floor (yes the game knows then you hit the floor using the gravity)
 		canJump = true #every time you hit the floor, you can jump again. we will use this boolean later 
 		
-	if Input.is_action_pressed("jump") and is_on_floor() and canJump: #whenever W (w is defined as "jump" in the keybinds) is pressed, AND the player is on the floor, AND the bool canjump is true, do the following things:
+	if Input.is_action_pressed("jump") && is_on_floor() && canJump: #whenever W (w is defined as "jump" in the keybinds) is pressed, AND the player is on the floor, AND the bool canjump is true, do the following things:
 		velocity.y = jump_speed #velocity on the Y axis will be set to the jump speed (-400)
 		jumps += 1 #your jumps will be incremented by 1
 		canJump = false #this disables this function from running so there are not two of the same functions running once you press W (the next function below this one also uses the W key for double jumping)
 	
-	if Input.is_action_just_pressed("jump") and jumps < maxJumps and not is_on_floor(): #once W is pressed AND the number of jumps you have are LESS than 2 AS WELL as not being on the floor, do the following:
+	if Input.is_action_just_pressed("jump") && jumps < maxJumps && !is_on_floor(): #once W is pressed AND the number of jumps you have are LESS than 2 AS WELL as not being on the floor, do the following:
 		velocity.y = jump_speed #same as before
 		jumps += 1 #same as before (this one doesnt set the canJump as false to make it possible to double jump)
-	
 
 	if not Input.is_action_pressed("jump"): #this is FUNDEMENTAL as if sets the canjump to true every frame the W key is not pressed. This makes it so thast you can keep jumping on the floor as long as you hold W, no matter if you double jumped or not
 		canJump = true
 	if Input.is_action_just_pressed("smash"):
 		velocity.y = -jump_speed * 3
+	
+	if Input.is_action_just_pressed("swap"):
+		if swap_to_bow: swap_to_bow = false
+		else: swap_to_bow = true
+		print("swap: ", swap_to_bow)
 		
 func resetPos(): #resets pos to 0,0 whenever r is pressed for debugging purposes
 	if Input.is_key_pressed(KEY_R):

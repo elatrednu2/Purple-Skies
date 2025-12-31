@@ -1,7 +1,9 @@
 extends Node2D
-
+var arrowCount = 10
 @export var maxPull := 200
 @export var maxForce := 1400
+@onready var swordScene:Node2D = $"../Sword"
+@onready var playerScene: CharacterBody2D = $".."
 const kMinAngle := -80
 const kMaxAngle := 80
 var currentForce = 0
@@ -14,6 +16,7 @@ var pullStartPos: Vector2 = Vector2.ZERO #the startpos is set to the 0,0 on the 
 
 
 func _process(delta: float): #called each frame
+	disable()
 	var dir = -(get_global_mouse_position() - global_position)
 	#pullAmount = clamp(dir.length() / maxPull, 0, 1)
 	var rawAngle = dir.angle() #the direction is set to the dir variable and angle() converts it into RADIANS as that is what the ROTATION property requests
@@ -26,7 +29,7 @@ func _process(delta: float): #called each frame
 		smoothAngle,
 		deg_to_rad(kMinAngle),
 		deg_to_rad(kMaxAngle),
-		0.67
+		0.6666666667
 	)
 	drawCycle()
 
@@ -35,7 +38,7 @@ func drawCycle():
 		startPull()
 	if pulling:
 		update()
-	if Input.is_action_just_released("draw") and pulling:
+	if Input.is_action_just_released("draw") and pulling and playerScene.swap_to_bow:
 		release()
 
 func startPull():
@@ -49,7 +52,17 @@ func update():
 	pullAmount = clamp(dist / maxPull, 0, 1) #divides the two making a value. Then this value is put betyween 0 and 1 so if the two values were 200 and 400, it would be 0.5, meaning it would be set to 0.5 but if the quotient was 2, it would be set to 1 becase that is the maximum value.
 	sprite.frame = int(pullAmount * 5) #pullAmount is a value between 0 and 1, so multiplyiong it by 5 will give you the frame that needs to be displayed. int() makes it so that numbers are whole numbers.
 
+func disable():
+	if !playerScene.swap_to_bow:
+		visible = false
+	else:
+		visible = true
+	
 func release():
+	arrowCount = clamp(arrowCount, -1, 10)
+	if arrowCount <= -1:
+		return
+	print("arrows: ", arrowCount)
 	pulling = false
 	if pullAmount < 0.15:
 		pullAmount = 0
@@ -58,8 +71,11 @@ func release():
 	sprite.frame = 0
 	fireArrow()
 	pullAmount = 0
+	
+
 
 func fireArrow(): 
+	arrowCount -= 1
 	var arrowScene = preload("res://Purple Skies/scenes/Weapons/Arrow.tscn")
 	var arrow = arrowScene.instantiate()
 	get_tree().current_scene.add_child(arrow)
@@ -78,6 +94,7 @@ func fireArrow():
 	
 	if sprite.frame == 0:
 		return
+
 
 func softClamp(angle, minAngle, maxAngle, softness := 0.6):
 	if angle < minAngle:

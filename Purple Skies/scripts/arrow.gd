@@ -15,8 +15,9 @@ var power:float = 0
 var hasHit = false
 var timerStarted = false
 
-func _on_body_entered():
+func _on_body_entered(body):
 	sleeping = true
+	enableHitbox()
 	
 func _ready(): #things in _ready() run once in the beginnning
 	var arrowHitbox: Area2D = $Area2D
@@ -40,21 +41,20 @@ func disableHitbox():
 	hitbox2.disabled = false
 	hitbox3.disabled = false
 	hitbox4.disabled = false
+	
+	
 func _on_area_2d_body_entered(body):
 	if stuck:
 		return
 		
 	if body.has_method("stopSpin") || is_in_group("Arrows") || is_in_group("floor"):
 		stickDespawn()
-		
 
 	if body.has_method("takeDamage"):
 		var dmg = getDamage()  # <-- call arrow's own getDamage()
 		body.takeDamage(dmg)
 		hasHit = true
 
-		
-	
 func stickDespawn():
 	stuck = true
 	freeze = true #stops all physdics ENTIRELY

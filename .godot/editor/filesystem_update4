@@ -5,3 +5,14 @@ res://Purple Skies/scenes/enemy.tscn
 res://Purple Skies/scripts/bow.gd
 res://Purple Skies/scenes/area_2d.gd
 res://Purple Skies/scenes/EnemyBlock.tscn
+res://Purple Skies/scripts/enemy.gd
+res://Purple Skies/scripts/area_2d.gd
+res://Purple Skies/scripts/player.gd
+res://Purple Skies/scenes/Player.tscn
+res://Purple Skies/scenes/Weapons/Bow.tscn
+res://Purple Skies/scripts/sword.gd
+res://Purple Skies/scenes/Weapons/Sword.tscn
+res://Purple Skies/scenes/Weapons/swordHitbox.gd
+res://Purple Skies/scenes/testGame.tscn
+res://Purple Skies/scenes/Weapons/sword.gd
+res://Purple Skies/scripts/Crosshair.gd

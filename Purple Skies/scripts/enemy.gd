@@ -1,6 +1,6 @@
 extends StaticBody2D  # or CharacterBody2D if it moves
 
-@export var max_health := 10
+@export var max_health := 100
 var health :float = max_health
 @onready var colorR = $ColorRect
 signal health_changed(current, max)
@@ -17,7 +17,7 @@ func takeDamage(amount: float):
 
 func die():
 	print("he ded :(")
-	health = 10
+	health = 100
 	colorR.color = Color(0.0, 0.0, 0.945, 1.0)
 
 func stopSpin():

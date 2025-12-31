@@ -9,4 +9,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position() # finds the position of the mouse
 	global_position = mouse_pos
-	rotation += 3*(PI/180)
+	rotation += 3*((TAU/2)/180) #edit to make the cursor rotate less or more

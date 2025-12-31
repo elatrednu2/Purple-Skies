@@ -38,4 +38,4 @@ position = Vector2(215.56616, 109.092285)
 [node name="Sprite2D" parent="." instance=ExtResource("5_bm2t6")]
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("6_ko481")]
-position = Vector2(897.4185, 9.508045)
+position = Vector2(137.96234, 170.64435)
