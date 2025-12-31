@@ -5,26 +5,33 @@
 [ext_resource type="Script" uid="uid://u6nf3ekw068c" path="res://Purple Skies/scripts/area_2d.gd" id="2_qms0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
-size = Vector2(42, 121)
+size = Vector2(35, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
-size = Vector2(51, 130)
+size = Vector2(43, 103)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_j1v3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(22, 62.5)
+position = Vector2(21.5, 77.5)
 shape = SubResource("RectangleShape2D_7xaro")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_qms0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(23.5, 63)
+position = Vector2(19.5, 76.5)
 shape = SubResource("RectangleShape2D_7k104")
 script = ExtResource("2_e1krj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 45.0
+offset_top = 24.0
+offset_right = 41.0
 offset_bottom = 125.0
+
+[node name="LineEdit" type="Label" parent="."]
+offset_left = 8.0
+offset_top = -6.0
+offset_right = 34.0
+offset_bottom = 21.0

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var health_bar = $"Health Bar" #adjust path for health bar
+@onready var bowScene = $Bow
 #export variables can be modified outside the script editor in the game engine 2d area thing itself
 @export var speed: float = 200
 @export var friction: float = 900
@@ -102,6 +103,7 @@ func resetPos(): #resets pos to 0,0 whenever r is pressed for debugging purposes
 		position.x = 59.695
 		position.y = 261
 		get_tree().call_group("arrows", "queue_free")
+		bowScene.arrowCount = 10
 
 func stopSpin():
 	pass

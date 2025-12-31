@@ -3,8 +3,13 @@ extends StaticBody2D  # or CharacterBody2D if it moves
 @export var max_health := 100
 var health :float = max_health
 @onready var colorR = $ColorRect
+@onready var textDisplay = $LineEdit
 signal health_changed(current, max)
 var timer: Timer
+
+func _process(delta: float) -> void:
+	textDisplay.text = str(int(health))
+
 func takeDamage(amount: float):
 	health -= amount
 	health = clamp(health, 0, max_health)
@@ -18,6 +23,7 @@ func takeDamage(amount: float):
 func die():
 	print("he ded :(")
 	health = 100
+	textDisplay.text
 	colorR.color = Color(0.0, 0.0, 0.945, 1.0)
 
 func stopSpin():
