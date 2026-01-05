@@ -21,7 +21,7 @@ func takeDamage(amount: float):
 		resetColor()
 
 func die():
-	print("he ded :(")
+	print("he ded :( borrro")
 	health = 100
 	textDisplay.text
 	colorR.color = Color(0.0, 0.0, 0.945, 1.0)
