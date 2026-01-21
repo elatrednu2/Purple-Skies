@@ -1,116 +1,181 @@
 extends CharacterBody2D
-@onready var health_bar = $"Health Bar" #adjust path for health bar
+
+#TODO: please tune gravity and other physics
+#TODO: make sure the special jump movement thing works because I am not certain
+
+@onready var healthBar = $"Health Bar"
 @onready var bowScene = $Bow
-#export variables can be modified outside the script editor in the game engine 2d area thing itself
-@export var speed: float = 200
-@export var friction: float = 900
-@export var accel: float = 400
-@export var gravity: float = 380
-@export var jump_speed: float = -400
-@export var max_health: int = 100
-@export var swap_to_bow: bool = true
-var health: float = max_health
-#constant maxJumps and jumps are for double jumps, as jumps is the number of jumps you have AT ANY TIME but max is the maximum jumps you can reach
-const maxJumps = 2
-var jumps = 0
-var isJumpPressed = false #this one is self explanitory bc of the name
-#canjump is for auto jumping when the player hits the floor (it's satisfying)
-var canJump = true
+@export var swap_to_bow := true
+signal health_changed(current: int, max: int)
 
-signal health_changed(current, max)
 
-func take_damage(amount: float):
-	health -= amount
-	health = clamp(health, 0, max_health)
-	emit_signal("health_changed", health, max_health)
+#movement
+@export var speed := 900.0
+@export var sprintMultiplier := 1.4
+@export var accel := 800.0
+@export var friction := 3000
+
+#gravity
+@export var baseGravity := 600.0
+@export var jumpSpeed := -600.0
+@export var jumpCutMultiplier := 3.0
+
+#coyote time
+@export var coyoteTime := 0.12
+@export var jumpBufferTime := 0.12
+var was_on_floor := false
+
+#health
+@export var maxHealth := 100
+var health: int
+
+#more jumps
+var autoHops := false
+const maxJumps := 2
+var jumps := 0
+var isJumpHeld := false
+
+#timers
+var coyoteTimer: Timer
+var jumpBufferTimer: Timer
+
+#gravity modifiers
+var gravityMultiplier := 1.0
+@export var hangGravity := 0.6
+@export var fastFallGravity := 9
+
+#debug
+@export var hurtAmount = true
+
+func _ready():
+	health = maxHealth
+
+	coyoteTimer = Timer.new()
+	coyoteTimer.one_shot = true
+	add_child(coyoteTimer)
+
+	jumpBufferTimer = Timer.new()
+	jumpBufferTimer.one_shot = true
+	add_child(jumpBufferTimer)
+
+#cleaned up this func a LOT
+func _physics_process(delta):
+	handle_input()
+	handle_movement(delta)
+	handle_gravity(delta)
+	move_and_slide()
+	handle_floor_state()
+
+	if healthBar:
+		healthBar.value = health
+
+func handle_input():
+	resetPos()
+	hurtSelf(hurtAmount)
+	
+	#there has to be a better way to do this than if statements bc if statements are baaaaaad
+	if Input.is_action_pressed("jump"):
+		autoHops = true
+	else:
+		autoHops = false
+	if Input.is_action_just_pressed("swap"):
+		swap_to_bow = !swap_to_bow
+	if Input.is_action_just_pressed("jump"):
+		isJumpHeld = true
+		jumpBufferTimer.start(jumpBufferTime)
+
+	if Input.is_action_just_released("jump"):
+		isJumpHeld = false
+
+	if can_jump() and (jumpBufferTimer.time_left > 0 or autoHops):
+		do_jump()
+		jumpBufferTimer.stop()
+
+	if Input.is_action_pressed("smash") and velocity.y > 0:
+		gravityMultiplier = fastFallGravity
+	else:
+		gravityMultiplier = 1.0
+
+#mov
+func handle_movement(delta):
+	#bind these keys if not done already
+	var input_dir := Input.get_action_strength("moveRight") - Input.get_action_strength("moveLeft")
+
+	var target_speed := speed
+	var friction_force := friction
+	if not is_on_floor():
+		friction_force *= 0.25
+
+	if input_dir != 0:
+		velocity.x = move_toward(velocity.x, input_dir * target_speed, accel * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, friction_force * delta)
+
+# ATT at physics
+func handle_gravity(delta):
+	var gravity := baseGravity
+
+	# Jump cut (release jump while rising)
+	if velocity.y < 0 and not isJumpHeld:
+		gravity *= jumpCutMultiplier
+
+	# Fast fall (only when falling)
+	elif velocity.y > 0 and Input.is_action_pressed("smash"):
+		gravity *= fastFallGravity
+
+	velocity.y += gravity * delta
+
+# coyote time attempt
+func handle_floor_state():
+	if is_on_floor():
+		jumps = 0
+		coyoteTimer.stop()
+	else:
+		if was_on_floor:
+			coyoteTimer.start(coyoteTime)
+	was_on_floor = is_on_floor()
+
+# more jump logic (fixed coyote time)
+func can_jump():
+	if is_on_floor():
+		return true
+	if coyoteTimer.time_left > 0:
+		return true
+	return false
+
+func do_jump():
+	velocity.y = jumpSpeed
+	if not is_on_floor() and coyoteTimer.time_left <= 0:
+		jumps += 1
+	coyoteTimer.stop()
+
+func take_damage(amount: int):
+	health = clamp(health - amount, 0, maxHealth)
+	emit_signal("health_changed", health, maxHealth)
 
 	if health <= 0:
 		die()
-		health = 100
-
-func heal(amount: float):
-	health += amount
-	health = clamp(health, 0, max_health)
-	emit_signal("health_changed", health, max_health)
 
 func die():
-	position.x = 59.695
-	position.y = 261
-	
-	
-#these methods/functions run once every frame so they fast
-func _physics_process(delta):
-	var inputDir := 0 #imput direction
-	handleInput()
-	velocity.y += gravity *delta #delta is the time between frames
-	move_and_slide()
-	update_movement(delta)
-	resetPos()
-	heal(0.05)
-	kill()
-	if Input.is_key_pressed(KEY_A):
-		inputDir += -1
-	elif Input.is_key_pressed(KEY_D):
-		inputDir += 1
-	else:
-		inputDir = 0
-	var targetSpeed := inputDir * speed
-	if targetSpeed != 0:
-		velocity.x = move_toward(velocity.x, targetSpeed, accel * delta)
-	else:
-		velocity.x = move_toward(velocity.x, 0, friction * delta*100)
-	velocity.x = move_toward(velocity.x, targetSpeed, accel * delta)
-	velocity.y += gravity * delta	
-	
-	if health_bar:
-		health_bar.value = health
-		
-	if Input.is_action_pressed("sprint") && Input.is_key_pressed(KEY_D) || Input.is_action_pressed("sprint") && Input.is_key_pressed(KEY_A):
-		speed = 600
-	else:
-		speed = 200
-#everytjhinmg in here is about keyboard inputs and stuff
-func handleInput():
-	
-	if Input.is_key_pressed(KEY_F):
-		take_damage(1)
-		
-	if is_on_floor(): #the function is_on_floor is a bool predefined in a godot class
-		jumps = 0 #your jumps are set to 0 every time you hit the floor (yes the game knows then you hit the floor using the gravity)
-		canJump = true #every time you hit the floor, you can jump again. we will use this boolean later 
-		
-	if Input.is_action_pressed("jump") && is_on_floor() && canJump: #whenever W (w is defined as "jump" in the keybinds) is pressed, AND the player is on the floor, AND the bool canjump is true, do the following things:
-		velocity.y = jump_speed #velocity on the Y axis will be set to the jump speed (-400)
-		jumps += 1 #your jumps will be incremented by 1
-		canJump = false #this disables this function from running so there are not two of the same functions running once you press W (the next function below this one also uses the W key for double jumping)
-	
-	if Input.is_action_just_pressed("jump") && jumps < maxJumps && !is_on_floor(): #once W is pressed AND the number of jumps you have are LESS than 2 AS WELL as not being on the floor, do the following:
-		velocity.y = jump_speed #same as before
-		jumps += 1 #same as before (this one doesnt set the canJump as false to make it possible to double jump)
+	position = Vector2(59.695, 261)
+	health = maxHealth
 
-	if not Input.is_action_pressed("jump"): #this is FUNDEMENTAL as if sets the canjump to true every frame the W key is not pressed. This makes it so thast you can keep jumping on the floor as long as you hold W, no matter if you double jumped or not
-		canJump = true
-	if Input.is_action_just_pressed("smash"):
-		velocity.y = -jump_speed * 3
-	
-	if Input.is_action_just_pressed("swap"):
-		if swap_to_bow: swap_to_bow = false
-		else: swap_to_bow = true
-		print("swap: ", swap_to_bow)
-		
-func resetPos(): #resets pos to 0,0 whenever r is pressed for debugging purposes
+
+
+
+
+#debug
+func resetPos():
 	if Input.is_key_pressed(KEY_R):
-		position.x = 59.695
-		position.y = 261
+		position = Vector2(59.695, 261)
 		get_tree().call_group("arrows", "queue_free")
 		bowScene.arrowCount = 10
+		velocity = Vector2.ZERO
+		
+func hurtSelf(switch: bool):
+	if switch == true:
+		if Input.is_key_pressed(KEY_F):
+			take_damage(3)
 
 func stopSpin():
-	pass
-
-func kill():
-	if Input.is_key_pressed(KEY_K):
-		take_damage(9223372036854775807) #set this to the 64-bit signed int limit -1 for debug ofcourse
-
-func update_movement(delta: float) -> void: #this is just there idk why but it has sm to do with delta (which is the fps kinda) and the game gets mad if i remove it
 	pass

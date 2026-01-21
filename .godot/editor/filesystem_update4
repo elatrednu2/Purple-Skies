@@ -1,2 +1,5 @@
+res://Purple Skies/scenes/Weapons/Arrow.tscn
+res://Purple Skies/scripts/player.gd
+res://Purple Skies/scenes/healthBar.tscn
 res://Purple Skies/scenes/enemy.tscn
 res://Purple Skies/scripts/enemy.gd

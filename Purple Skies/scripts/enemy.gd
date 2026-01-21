@@ -5,8 +5,7 @@ var health :float = max_health
 @onready var colorR = $ColorRect
 @onready var textDisplay = $LineEdit
 signal health_changed(current, max)
-var timer: Timer
-
+var timer: Timer 
 func _process(delta: float) -> void:
 	textDisplay.text = str(int(health))
 

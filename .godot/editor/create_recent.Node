@@ -1,3 +1,7 @@
+Label
+LineEdit
+Panel
+CanvasLayer
 Label      - Matches the "text" keyword.
 LineEdit      - Matches the "text" keyword.
 TextEdit
@@ -9,6 +13,3 @@ Area2D
 StaticBody2D
 RigidBody2D
 CharacterBody2D
-Sprite2D
-Marker2D
-TextureProgressBar

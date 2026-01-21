@@ -10,7 +10,14 @@
 size = Vector2(24, 62)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+floor_constant_speed = true
+safe_margin = 0.001
 script = ExtResource("1_xhfnw")
+speed = 600.0
+accel = 500.0
+baseGravity = 1000.0
+jumpCutMultiplier = 1.0
+coyoteTime = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0rwas")

@@ -6,7 +6,7 @@ extends RigidBody2D #this node attached to a rigid body (credits to zilin bc i w
 @onready var hitbox2: CollisionShape2D = $CollisionShape2D2
 @onready var hitbox3: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var hitbox4: CollisionShape2D = $Area2D/CollisionShape2D2
-
+var stuckTo: Node2D = null
 var stuck: bool = false #this was made from me lwk not knowing how to make the arrow stop spinning on contact with the ground
 @export var hitboxDelay := 0.01
 @export var despawnTime = 3
@@ -46,6 +46,8 @@ func disableHitbox():
 func _on_area_2d_body_entered(body):
 	if stuck:
 		return
+	if body is CharacterBody2D:
+		stickToBody(body)
 		
 	if body.has_method("stopSpin") || is_in_group("Arrows") || is_in_group("floor"):
 		stickDespawn()
@@ -84,6 +86,32 @@ func getDamage() -> float:
 	var t:float = clamp(power, 0.0, 1.0)
 	var curved:float = t * t + 0.2 * t
 	return arrowDamage * curved
+	
+func stickToBody(body: Node2D):
+	stuck = true
+	stuckTo = body
+
+	freeze = true
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
+	gravity_scale = 0
+
+	# Keep world position
+	var global_xform = global_transform
+
+	# Reparent to body
+	get_parent().remove_child(self)
+	body.add_child(self)
+
+	# Restore world position
+	global_transform = global_xform
+
+	hitbox.disabled = true
+	hitbox2.disabled = true
+	hitbox3.disabled = true
+	hitbox4.disabled = true
+
+	despawnTimer()
 	
 
 	
