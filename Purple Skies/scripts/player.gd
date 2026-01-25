@@ -8,32 +8,42 @@ extends CharacterBody2D
 @export var swap_to_bow := true
 signal health_changed(current: int, max: int)
 
+# playerState
+var playerState: String
 
+#region movement variables
 #movement
 @export var speed := 900.0
 @export var sprintMultiplier := 1.4
 @export var accel := 800.0
 @export var friction := 3000
+#endregion
 
+#region gravity variables
 #gravity
 @export var baseGravity := 600.0
-@export var jumpSpeed := -600.0
+@export var jumpSpeed := -800.0
 @export var jumpCutMultiplier := 3.0
+#endregion
 
 #coyote time
 @export var coyoteTime := 0.12
 @export var jumpBufferTime := 0.12
 var was_on_floor := false
 
+#region health variables
 #health
 @export var maxHealth := 100
 var health: int
+#endregion
 
 #more jumps
 var autoHops := false
 const maxJumps := 2
-var jumps := 0
+var allowJumps: bool
 var isJumpHeld := false
+var toQueueJump := false
+var jumpCut: float
 
 #timers
 var coyoteTimer: Timer
@@ -48,8 +58,8 @@ var gravityMultiplier := 1.0
 @export var hurtAmount = true
 
 func _ready():
-	health = maxHealth
-
+	health = maxHealth;
+																																																																																																																																																						
 	coyoteTimer = Timer.new()
 	coyoteTimer.one_shot = true
 	add_child(coyoteTimer)
@@ -64,16 +74,20 @@ func _physics_process(delta):
 	handle_movement(delta)
 	handle_gravity(delta)
 	move_and_slide()
-	handle_floor_state()
-
+	handle_floor_state();
+	_healthBarFormat();
+		
+func _healthBarFormat():
 	if healthBar:
-		healthBar.value = health
+		healthBar.value = health;
 
 func handle_input():
 	resetPos()
 	hurtSelf(hurtAmount)
+	input()
 	
-	#there has to be a better way to do this than if statements bc if statements are baaaaaad
+func input():
+		#there has to be a better way to do this than if statements bc if statements are baaaaaad
 	if Input.is_action_pressed("jump"):
 		autoHops = true
 	else:
@@ -83,13 +97,12 @@ func handle_input():
 	if Input.is_action_just_pressed("jump"):
 		isJumpHeld = true
 		jumpBufferTimer.start(jumpBufferTime)
-
-	if Input.is_action_just_released("jump"):
-		isJumpHeld = false
-
-	if can_jump() and (jumpBufferTimer.time_left > 0 or autoHops):
-		do_jump()
-		jumpBufferTimer.stop()
+		if not is_on_floor() and not toQueueJump:
+			toQueueJump = true
+			await get_tree().create_timer(0.125).timeout
+			toQueueJump = false
+	if Input.is_action_just_released("jump") and playerState == "jumping":
+		jumpCut = 0.75
 
 	if Input.is_action_pressed("smash") and velocity.y > 0:
 		gravityMultiplier = fastFallGravity
@@ -100,7 +113,6 @@ func handle_input():
 func handle_movement(delta):
 	#bind these keys if not done already
 	var input_dir := Input.get_action_strength("moveRight") - Input.get_action_strength("moveLeft")
-
 	var target_speed := speed
 	var friction_force := friction
 	if not is_on_floor():
@@ -110,6 +122,14 @@ func handle_movement(delta):
 		velocity.x = move_toward(velocity.x, input_dir * target_speed, accel * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction_force * delta)
+
+	if can_jump():
+		if toQueueJump:
+			do_jump()
+			toQueueJump = false
+		if jumpBufferTimer.time_left > 0 or autoHops:
+			do_jump()
+			jumpBufferTimer.stop()
 
 # ATT at physics
 func handle_gravity(delta):
@@ -122,13 +142,24 @@ func handle_gravity(delta):
 	# Fast fall (only when falling)
 	elif velocity.y > 0 and Input.is_action_pressed("smash"):
 		gravity *= fastFallGravity
-
-	velocity.y += gravity * delta
-
+		
+	if velocity.y < -600:
+		playerState = "jumping"
+		velocity.y += gravity * delta
+		velocity.y *= jumpCut
+		print(velocity.y)
+	else:
+		jumpCut = 1.0
+		velocity.y += gravity * delta
+	if velocity.y > 0:
+		playerState = "falling"
+	elif velocity.y < 0:
+		playerState = "jumping"
+		
 # coyote time attempt
 func handle_floor_state():
 	if is_on_floor():
-		jumps = 0
+		playerState	= "walking"
 		coyoteTimer.stop()
 	else:
 		if was_on_floor:
@@ -139,14 +170,15 @@ func handle_floor_state():
 func can_jump():
 	if is_on_floor():
 		return true
-	if coyoteTimer.time_left > 0:
+	elif coyoteTimer.time_left > 0:
 		return true
 	return false
 
 func do_jump():
+	playerState = "jumping"
 	velocity.y = jumpSpeed
 	if not is_on_floor() and coyoteTimer.time_left <= 0:
-		jumps += 1
+		allowJumps = true
 	coyoteTimer.stop()
 
 func take_damage(amount: int):
@@ -159,9 +191,6 @@ func take_damage(amount: int):
 func die():
 	position = Vector2(59.695, 261)
 	health = maxHealth
-
-
-
 
 
 #debug
