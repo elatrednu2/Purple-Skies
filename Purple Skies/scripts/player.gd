@@ -44,6 +44,7 @@ var allowJumps: bool
 var isJumpHeld := false
 var toQueueJump := false
 var jumpCut: float
+var peak:= -600
 
 #timers
 var coyoteTimer: Timer
@@ -52,7 +53,7 @@ var jumpBufferTimer: Timer
 #gravity modifiers
 var gravityMultiplier := 1.0
 @export var hangGravity := 0.6
-@export var fastFallGravity := 9
+@export var fastFallGravity := 3
 
 #debug
 @export var hurtAmount = true
@@ -103,11 +104,9 @@ func input():
 			toQueueJump = false
 	if Input.is_action_just_released("jump") and playerState == "jumping":
 		jumpCut = 0.75
-
-	if Input.is_action_pressed("smash") and velocity.y > 0:
-		gravityMultiplier = fastFallGravity
-	else:
-		gravityMultiplier = 1.0
+#velocity.y > peak
+	if Input.is_action_pressed("smash"):
+		playerState = "smashing"
 
 #mov
 func handle_movement(delta):
@@ -135,27 +134,28 @@ func handle_movement(delta):
 func handle_gravity(delta):
 	var gravity := baseGravity
 
-	# Jump cut (release jump while rising)
-	if velocity.y < 0 and not isJumpHeld:
-		gravity *= jumpCutMultiplier
-
 	# Fast fall (only when falling)
-	elif velocity.y > 0 and Input.is_action_pressed("smash"):
-		gravity *= fastFallGravity
-		
-	if velocity.y < -600:
+	if velocity.y > 0:
+		if playerState == "falling":
+			gravityMultiplier = 1.05
+		elif playerState == "smashing":
+			gravityMultiplier = fastFallGravity
+	else:
+		gravityMultiplier = 1.0
+	if velocity.y < peak:
 		playerState = "jumping"
-		velocity.y += gravity * delta
-		velocity.y *= jumpCut
-		print(velocity.y)
 	else:
 		jumpCut = 1.0
-		velocity.y += gravity * delta
-	if velocity.y > 0:
+	if velocity.y > 0 and playerState != "smashing":
 		playerState = "falling"
-	elif velocity.y < 0:
+	elif velocity.y < 0 and playerState != "smashing":
 		playerState = "jumping"
 		
+	velocity.y += gravity * delta
+	velocity.y *= jumpCut*gravityMultiplier
+	if velocity.y < 0 and playerState == "smashing":
+		velocity.y = 0
+
 # coyote time attempt
 func handle_floor_state():
 	if is_on_floor():
