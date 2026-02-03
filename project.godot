@@ -11,10 +11,17 @@ config_version=5
 [application]
 
 config/name="placeholderName"
+<<<<<<< HEAD
 config/tags=PackedStringArray("current")
 run/main_scene="uid://bsiby2wgu1ced"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+=======
+run/main_scene="uid://bsiby2wgu1ced"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+config/tags=PackedStringArray("current")
+>>>>>>> 6b0cc4326bbcf83d6d68a9aba55d04f274aa5d21
 
 [input]
 

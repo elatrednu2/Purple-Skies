@@ -16,6 +16,10 @@ script = ExtResource("1_xhfnw")
 speed = 600.0
 accel = 500.0
 baseGravity = 1000.0
+<<<<<<< HEAD
+=======
+jumpCutMultiplier = 1.0
+>>>>>>> 6b0cc4326bbcf83d6d68a9aba55d04f274aa5d21
 coyoteTime = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

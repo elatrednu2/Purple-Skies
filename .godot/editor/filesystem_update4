@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 res://Purple Skies/scenes/Player.tscn
 res://Purple Skies/scripts/player.gd
+=======
+res://Purple Skies/scenes/Weapons/Arrow.tscn
+res://Purple Skies/scripts/player.gd
+res://Purple Skies/scenes/healthBar.tscn
+res://Purple Skies/scenes/enemy.tscn
+res://Purple Skies/scripts/enemy.gd
+>>>>>>> 6b0cc4326bbcf83d6d68a9aba55d04f274aa5d21
