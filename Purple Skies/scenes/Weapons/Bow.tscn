@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3386g7dgj4vp"]
+
+[ext_resource type="Script" uid="uid://cqjx5jbmpty2x" path="res://Purple Skies/scripts/bow.gd" id="1_t88jg"]
+[ext_resource type="Texture2D" uid="uid://bfee8inowkbwt" path="res://Assets/BowUnstrung.png" id="2_qj6jx"]
+[ext_resource type="Texture2D" uid="uid://bxexbp1oikvlt" path="res://Assets/BowPulled1.png" id="3_o8l1k"]
+[ext_resource type="Texture2D" uid="uid://bq4pw241ycieu" path="res://Assets/BowPulled2.png" id="4_ujug7"]
+[ext_resource type="Texture2D" uid="uid://c6syh5g8oi4c7" path="res://Assets/BowPulled3.png" id="5_q55r1"]
+[ext_resource type="Texture2D" uid="uid://c2kjawsyq2cm" path="res://Assets/BowPulled4.png" id="6_njyat"]
+[ext_resource type="Texture2D" uid="uid://uo8vfn7gikaj" path="res://Assets/BowPulled5.png" id="7_xxesw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t4v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qj6jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o8l1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ujug7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q55r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_njyat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xxesw")
+}],
+"loop": false,
+"name": &"anim",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Bow" type="Node2D"]
+script = ExtResource("1_t88jg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-10, -1)
+sprite_frames = SubResource("SpriteFrames_4t4v2")
+animation = &"anim"
+
+[node name="Marker2D" type="Marker2D" parent="."]

@@ -1,0 +1,15 @@
+Label
+LineEdit
+Panel
+CanvasLayer
+Label      - Matches the "text" keyword.
+LineEdit      - Matches the "text" keyword.
+TextEdit
+RichTextLabel
+AnimatedSprite2D
+CollisionShape2D
+ColorRect
+Area2D
+StaticBody2D
+RigidBody2D
+CharacterBody2D

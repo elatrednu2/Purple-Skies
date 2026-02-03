@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dugw66842yfb7"]
+
+[ext_resource type="Script" uid="uid://bcmg83mx2u8yo" path="res://Purple Skies/scripts/stopSpin/platform.gd" id="1_u1pew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgam6"]
+size = Vector2(533, 309)
+
+[node name="Platform" type="StaticBody2D" groups=["floor"]]
+script = ExtResource("1_u1pew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["floor"]]
+position = Vector2(266, 157)
+shape = SubResource("RectangleShape2D_vgam6")
+
+[node name="ColorRect" type="ColorRect" parent="." groups=["floor"]]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 533.0
+offset_bottom = 311.0
+color = Color(0.56078434, 0.28627452, 0.22745098, 1)

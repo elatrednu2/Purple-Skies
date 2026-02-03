@@ -1,0 +1,73 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1770048851
+export_presets.cfg::TextFile::-1::1770004239::0::1::::<><><>0<>0<><>::
+LICENSE.md::TextFile::-1::1770004238::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1770004239::0::1::::<><><>0<>0<><>::
+::res://addons/::1770004318
+::res://addons/godot-git-plugin/::1770004318
+git_plugin.gdextension::GDExtension::7436669202531971279::1770004239::0::1::::<><><>0<>0<><>::
+plugin.cfg::TextFile::-1::1770004239::0::1::::<><><>0<>0<><>::
+THIRDPARTY.md::TextFile::-1::1770004239::0::1::::<><><>0<>0<><>::
+::res://addons/godot-git-plugin/linux/::1770004318
+::res://addons/godot-git-plugin/macos/::1770004318
+::res://addons/godot-git-plugin/win64/::1770048844
+::res://Assets/::1770004318
+BaseArrow-1.png (1).png::CompressedTexture2D::385716588388235664::1770004238::1770004238::1::::<><><>0<>0<>636bcd93c7a7943cff944f8ee8696c18<>res://.godot/imported/BaseArrow-1.png (1).png-895cf072530c948432b8c69d4bb8794f.ctex::
+BaseArrow.png::CompressedTexture2D::7744467793082191836::1770004238::1770004238::1::::<><><>0<>0<>02d6b4b06cfeadd39da6ef8b1021c063<>res://.godot/imported/BaseArrow.png-69324c94825b4c1ba0ef14e03577bae3.ctex::
+BaseArrow_enhanced_crisp.png::CompressedTexture2D::2101743428716367850::1770004238::1770004238::1::::<><><>0<>0<>3df9dfb2ba604f3e04e16128b8fc182d<>res://.godot/imported/BaseArrow_enhanced_crisp.png-f76317a9ea3a5b0fda45c824f297ebe8.ctex::
+BowPulled0.png::CompressedTexture2D::7199171145946402134::1770004238::1770004238::1::::<><><>0<>0<>fb425831db58f38aab336a5bf5ac83c0<>res://.godot/imported/BowPulled0.png-3661a70233a1ea94ff6148ce5ccbae9c.ctex::
+BowPulled1.png::CompressedTexture2D::4010420703673989869::1770004238::1770004238::1::::<><><>0<>0<>f6b1e0182df41f16068688ab4d18f559<>res://.godot/imported/BowPulled1.png-26a84ca60cc3e59292efa34cb4aebf2f.ctex::
+BowPulled2.png::CompressedTexture2D::3570260643270020428::1770004238::1770004238::1::::<><><>0<>0<>4f8bdda05c492af578096e368eb31b08<>res://.godot/imported/BowPulled2.png-83b82279c33d1092066a8124ec620d33.ctex::
+BowPulled3.png::CompressedTexture2D::6987325614609767960::1770004238::1770004238::1::::<><><>0<>0<>83e07570d792f6b66b90331391a0c7c0<>res://.godot/imported/BowPulled3.png-f614f292a15cc01f3f376e408d4627d8.ctex::
+BowPulled4.png::CompressedTexture2D::196739163544754428::1770004238::1770004238::1::::<><><>0<>0<>d008ade636165042d669b2cceb6b31bb<>res://.godot/imported/BowPulled4.png-254c300d1d21b5e9dc23492488f829c1.ctex::
+BowPulled5.png::CompressedTexture2D::1434719607912266385::1770004238::1770004238::1::::<><><>0<>0<>bb5393ef593ff571218ef599306449d2<>res://.godot/imported/BowPulled5.png-62741050c9fe4cc9962f3c25d24fa2c3.ctex::
+BowUnstrung.png::CompressedTexture2D::2745924653004578355::1770004238::1770004238::1::::<><><>0<>0<>a89a1ec78d8f1b92be078f75f8bc58f4<>res://.godot/imported/BowUnstrung.png-b3d9b7b7b8b4a1665c5335bb4c5d91d1.ctex::
+Crosshair.png::CompressedTexture2D::7489870255024533712::1770004238::1770004238::1::::<><><>0<>0<>fc55bc423b195c8762103568ce328c8a<>res://.godot/imported/Crosshair.png-5a969940a5d5ec866896c3bee6b2447d.ctex::
+HealthBarOver3x.png::CompressedTexture2D::5126466997452849496::1770004238::1770004238::1::::<><><>0<>0<>f0f1b05977082900fb67ea19c77a9a9b<>res://.godot/imported/HealthBarOver3x.png-aaef0f671a6f8538acf776afb8bfa0db.ctex::
+HealthBarUnder3x.png::CompressedTexture2D::4011175361904255285::1770004238::1770004238::1::::<><><>0<>0<>cd41ff59d928f6503f32ee1f545f7732<>res://.godot/imported/HealthBarUnder3x.png-1b467b5e535a87517ac63b2af036f87c.ctex::
+small sword.webp::CompressedTexture2D::9032747728965929480::1770004238::1770004238::1::::<><><>0<>0<>ba5ae5bd0f849df968c496665ae5df89<>res://.godot/imported/small sword.webp-1f386b9249d2c0307cd277b3d65c2564.ctex::
+sword-small.png::::-1::1770004238::1770004238::0::::<><><>0<>0<>dbfe8f984b9d153eb26e5bc3983e96bc<>::
+sword.png::::-1::1770004238::1770004238::0::::<><><>0<>0<>4935d69ce54f1ce86101b721383a5326<>::
+swordwbg-1.png (1).png::CompressedTexture2D::5321230134740415387::1770004238::1770004238::1::::<><><>0<>0<>63437f973c7fff5867868a7f0c261bb5<>res://.godot/imported/swordwbg-1.png (1).png-0dd4ebb7b41b62d6feb22c9882b0f511.ctex::
+swordwbg-1.png_1-1.png_1.webp::CompressedTexture2D::6054662813229177801::1770004238::1770004238::1::::<><><>0<>0<>e8fea643c4b5c6bfeefac011610f9cbe<>res://.godot/imported/swordwbg-1.png_1-1.png_1.webp-34526c7dfbb13a2f1f2c7fbb18dbadd4.ctex::
+swordwbg-1.png_1.webp::CompressedTexture2D::458096405984973537::1770004238::1770004238::1::::<><><>0<>0<>4ff4ff79da6cfee9c2fa33b8d0140846<>res://.godot/imported/swordwbg-1.png_1.webp-0042a2aea763b34fec9f0d7218dce212.ctex::
+::res://Purple Skies/::1770004318
+::res://Purple Skies/scenes/::1770004318
+debugWindow.tscn::PackedScene::7097072669087483793::1770004238::0::1::::<><><>0<>0<><>::uid://oj64vdjnfndc::::res://Purple Skies/scripts/debugWindow.gd<>uid://ehaasikb01g0::::res://Purple Skies/scenes/infoWindow.gd
+enemy.tscn::PackedScene::1458940886574404624::1770004238::0::1::::<><><>0<>0<><>::uid://dkmonw1cd3g2a::::res://Purple Skies/scripts/enemy.gd<>uid://s2lhhnwsew8h::::res://Purple Skies/scripts/enemycollision.gd<>uid://u6nf3ekw068c::::res://Purple Skies/scripts/area_2d.gd
+EnemyBlock.tscn::PackedScene::7314835494110273738::1770004238::0::1::::<><><>0<>0<><>::uid://cnb05ps1wck6m::::res://Purple Skies/scripts/enemyBlockHitbox.gd<>uid://l5v2rsvlunca::::res://Purple Skies/scripts/enemy_blockSS.gd
+healthBar.tscn::PackedScene::2244959621124335955::1770004238::0::1::::<><><>0<>0<><>::uid://n7loyrk3uyey::::res://Purple Skies/scripts/Health.gd<>uid://bxfbqb3gpirht::::res://Assets/HealthBarUnder3x.png<>uid://cfbkfr2nu47y7::::res://Assets/HealthBarOver3x.png
+infoWindow.gd::GDScript::295206977065989349::1770004238::0::1::::<>Label<><>0<>0<><>::
+platform.tscn::PackedScene::8576818004373281190::1770004238::0::1::::<><><>0<>0<><>::uid://bcmg83mx2u8yo::::res://Purple Skies/scripts/stopSpin/platform.gd
+Player.tscn::PackedScene::7442214889316600955::1770004238::0::1::::<><><>0<>0<><>::uid://d3e8bsxh3tnbc::::res://Purple Skies/scripts/player.gd<>uid://bv7a5aflpltu8::::res://Purple Skies/scripts/camera_2d.gd<>uid://b3386g7dgj4vp::::res://Purple Skies/scenes/Weapons/Bow.tscn<>uid://imrwhkps24kw::::res://Purple Skies/scenes/Weapons/Sword.tscn<>uid://b2frjlhqvk4ei::::res://Purple Skies/scripts/sword.gd
+testGame.tscn::PackedScene::3666439919673160803::1770004238::0::1::::<><><>0<>0<><>::uid://dugw66842yfb7::::res://Purple Skies/scenes/platform.tscn<>uid://debcgr3wxjbd0::::res://Purple Skies/scenes/Player.tscn<>uid://dchmjij4h3tve::::res://Purple Skies/scenes/EnemyBlock.tscn<>uid://68qflpo631xn::::res://Purple Skies/scenes/healthBar.tscn<>uid://bcgo21iicfsh1::::res://Purple Skies/scenes/Weapons/crosshair.tscn<>uid://u1ysp8216b0c::::res://Purple Skies/scenes/enemy.tscn<>uid://c8d40q7uwsvrl::::res://Purple Skies/scenes/debugWindow.tscn
+::res://Purple Skies/scenes/Weapons/::1770004318
+Arrow.tscn::PackedScene::4403887091037150480::1770004238::0::1::::<><><>0<>0<><>::uid://d3j2kqyjupa45::::res://Purple Skies/scripts/arrow.gd<>uid://dilqiusydnow7::::res://Assets/BaseArrow.png<>uid://b4dvttwu8grni::::res://Purple Skies/scripts/ArrowHitbox.gd
+Bow.tscn::PackedScene::4411570267762581077::1770004238::0::1::::<><><>0<>0<><>::uid://cqjx5jbmpty2x::::res://Purple Skies/scripts/bow.gd<>uid://bfee8inowkbwt::::res://Assets/BowUnstrung.png<>uid://bxexbp1oikvlt::::res://Assets/BowPulled1.png<>uid://bq4pw241ycieu::::res://Assets/BowPulled2.png<>uid://c6syh5g8oi4c7::::res://Assets/BowPulled3.png<>uid://c2kjawsyq2cm::::res://Assets/BowPulled4.png<>uid://uo8vfn7gikaj::::res://Assets/BowPulled5.png
+crosshair.tscn::PackedScene::2540084270159599896::1770004238::0::1::::<><><>0<>0<><>::uid://deyfcls08sa5u::::res://Assets/Crosshair.png<>uid://cfgwagjuywjru::::res://Purple Skies/scripts/Crosshair.gd
+sword.gd::GDScript::8002718340498071723::1770004238::0::1::::<>Node2D<><>0<>0<><>::
+Sword.tscn::PackedScene::587355142314089654::1770004238::0::1::::<><><>0<>0<><>::uid://ch2v5auvjwfix::::res://Assets/swordwbg-1.png (1).png<>uid://dmatup0meuaed::::res://Purple Skies/scenes/Weapons/sword.gd<>uid://c71e32mwj77e3::::res://Purple Skies/scenes/Weapons/swordHitbox.gd
+swordHitbox.gd::GDScript::7072852493290203636::1770004238::0::1::::<>Area2D<><>0<>0<><>::
+::res://Purple Skies/scripts/::1770004318
+area_2d.gd::GDScript::1468572310329784136::1770004238::0::1::::<>Area2D<><>0<>0<><>::
+arrow.gd::GDScript::9144787167359635792::1770004238::0::1::::<>RigidBody2D<><>0<>0<><>::
+ArrowHitbox.gd::GDScript::4429400302272921670::1770004238::0::1::::<>Area2D<><>0<>0<><>::
+bow.gd::GDScript::5915892804853035093::1770004238::0::1::::<>Node2D<><>0<>0<><>::
+camera_2d.gd::GDScript::3926500070283152637::1770004238::0::1::::<>Camera2D<><>0<>0<><>::
+collision_shape_2d.gd::GDScript::8705277672689200186::1770004238::0::1::::<>CollisionShape2D<><>0<>0<><>::
+Crosshair.gd::GDScript::5137507955926581738::1770004238::0::1::::<>Sprite2D<><>0<>0<><>::
+debugWindow.gd::GDScript::1003158333569262836::1770004238::0::1::::<>CanvasLayer<><>0<>0<><>::
+enemy.gd::GDScript::7886797469502444670::1770004239::0::1::::<>StaticBody2D<><>0<>0<><>::
+enemyBlockHitbox.gd::GDScript::5688933027938534658::1770004239::0::1::::<>Area2D<><>0<>0<><>::
+enemycollision.gd::GDScript::1319818161091687809::1770004239::0::1::::<>CollisionShape2D<><>0<>0<><>::
+enemy_blockSS.gd::GDScript::835332807596754152::1770004239::0::1::::<>StaticBody2D<><>0<>0<><>::
+Health.gd::GDScript::979209230774097632::1770004238::0::1::::<>TextureProgressBar<><>0<>0<><>::
+player.gd::GDScript::9134813611822678608::1770004239::0::1::::<>CharacterBody2D<><>0<>0<><>::
+sword.gd::GDScript::4292890201038387300::1770004239::0::1::::<>Node2D<><>0<>0<><>::
+test_game.gd::GDScript::888087757460044839::1770004239::0::1::::<>ColorRect<><>0<>0<><>::
+::res://Purple Skies/scripts/stopSpin/::1770004318
+platform.gd::GDScript::2551995627446721394::1770004239::0::1::::<>StaticBody2D<><>0<>0<><>::
+::res://Purple Skies/scripts (unused)/::1770004318
+::res://Purple Skies/Unused files/::1770004318
+global_script_class_cache.cfg::TextFile::-1::1770004238::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::4581810031416679115::1770004238::1770004238::1::::<><><>0<>0<>e46315cb95ef3d5ac33bf839e3b0c830<>res://.godot/imported/icon.svg-913288ff25df63c6b596c20a4fa8a863.ctex::

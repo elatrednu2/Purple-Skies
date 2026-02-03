@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dchmjij4h3tve"]
+
+[ext_resource type="Script" uid="uid://cnb05ps1wck6m" path="res://Purple Skies/scripts/enemyBlockHitbox.gd" id="1_5tvso"]
+[ext_resource type="Script" uid="uid://l5v2rsvlunca" path="res://Purple Skies/scripts/enemy_blockSS.gd" id="1_detl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8i3y"]
+size = Vector2(3.6977382, 4.2913237)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detl0"]
+radius = 19.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_detl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.50000066, -1)
+scale = Vector2(7.3017607, 6.9908504)
+shape = SubResource("RectangleShape2D_p8i3y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = 17.0
+color = Color(0.59607846, 0.07450981, 0.05882353, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_5tvso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_detl0")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b30jm21tfopjc"]
+
+[ext_resource type="Script" uid="uid://d3j2kqyjupa45" path="res://Purple Skies/scripts/arrow.gd" id="1_57odp"]
+[ext_resource type="Texture2D" uid="uid://dilqiusydnow7" path="res://Assets/BaseArrow.png" id="2_cv7hy"]
+[ext_resource type="Script" uid="uid://b4dvttwu8grni" path="res://Purple Skies/scripts/ArrowHitbox.gd" id="3_11ffd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11ffd"]
+size = Vector2(29.586533, 0.19024158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_japuj"]
+size = Vector2(0.9738605, 1.0355544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny4a5"]
+size = Vector2(2.4166842, 2.3604393)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpycq"]
+size = Vector2(1.3569043, 2.0052085)
+
+[node name="Node2D" type="RigidBody2D" groups=["arrows"]]
+script = ExtResource("1_57odp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.16780853, 0)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_cv7hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.1490777, -0.05534941)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_11ffd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-27.599556, 0.6412232)
+shape = SubResource("RectangleShape2D_japuj")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.2517166, 0.08390522)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_11ffd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15.876445, -0.21307336)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_ny4a5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18.187243, 0.009021148)
+shape = SubResource("RectangleShape2D_bpycq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
