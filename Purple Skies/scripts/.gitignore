@@ -1,0 +1,8 @@
+.godot/
+.import/
+.export/
+
+*.tmp
+*.bak
+*.old
+*.autosave
